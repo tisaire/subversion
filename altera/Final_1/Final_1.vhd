@@ -92,6 +92,7 @@ architecture rtl of Final_1 is
 	signal DataGen2Buff:		std_logic_vector(11 downto 0);
 	signal DataBuff2FIFO:	std_logic_vector(11 downto 0);
 	signal DataFIFO2SRAM:	std_logic_vector(11 downto 0);
+	signal DataSRAM2Fpio:	std_logic_vector(11 downto 0);
 	
 	signal AUX1:					std_logic_vector(11 downto 0);
 	signal AUX2:					std_logic_vector(11 downto 0);
@@ -116,6 +117,8 @@ architecture rtl of Final_1 is
 	signal Addr2R:						std_logic_vector(19 downto 0):="00000000000000000000";
 	signal Addr:						std_logic_vector(19 downto 0):="00000000000000000000";
 	signal RW_RAM:						std_logic;
+	signal WriteFIFOpio:				std_logic;
+	signal ReadFIFOpio:				std_logic
 	
 	
 	
@@ -154,18 +157,18 @@ begin
 			wrfull	=> LEDG(6)
 	);
 	
-	LEDG(7) <= FIFOempty;
+	
 	
 	SRAM: component DriverSRAM 
 	port map (
         clk             => clk,
         reset           => Reset,
         mem             => Emen,      
-        rw              => '0',
+        rw              => RW_RAM,
         addr            => Addr,
         data_f2s        => DataFIFO2SRAM,
         ready           => Rdymen,
-        data_s2f_r      => AUX2,
+        data_s2f_r      => LEDR(11 downto 0),
         data_s2f_ur     => AUX1,
         -- To SRAM
         ad              => SRAM_ADDR,
@@ -179,11 +182,7 @@ begin
 
     );
 	
-	Addr <= Addr2W when (RW_RAM = '0') else Addr2R;
 	
-	Addr2R <= "000000000000" & SW(7 downto 0);
-	
-	RW_RAM <= SW(17);
 	
 	EscrivirSRAM: process(ReadFIFO)
 	begin
@@ -195,13 +194,33 @@ begin
 		end if; 
 	end process;
 	
+	
+	LeerSRAM: process(ReadFIFO)
+	begin
+	
+		if ReadFIFO'event and ReadFIFO = '1' then
+			if (RW_RAM ='0') then
+				Addr2W <= Addr2W +'1';
+			end if;
+		end if; 
+	end process;
+	
+	
+	LEDG(7) <= FIFOempty;
+	
+	Addr <= Addr2W when (RW_RAM = '0') else Addr2R;
+	
+	Addr2R <= "000000000000" & SW(7 downto 0);
+	
+	RW_RAM <= SW(17);
+	
 	LEDG(5) <= ReadFIFO;
 	
-	Emen <= Rdymen and (not FIFOempty);
+	Emen <= ( Rdymen and (not FIFOempty) and (not RW_RAM) ) or (not KEY(1));
 	
-	ReadFIFO <= Emen;
+	ReadFIFO <= Emen and (not RW_RAM);
 	
-	LEDR(11 downto 0) <= DataFIFO2SRAM;
+	--LEDR(11 downto 0) <= DataFIFO2SRAM;
 	
 	 Reg_Trigger: process(clk,Counter_Full) -- Biestable raro que retiene el Trigger!
 	 begin
