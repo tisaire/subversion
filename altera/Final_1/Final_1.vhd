@@ -112,8 +112,10 @@ architecture rtl of Final_1 is
 	signal Reset:						std_logic;
 	signal Emen:						std_logic;
 	signal Rdymen:						std_logic;
-	signal Addr2W:						std_logic_vector(7 downto 0):="00000000";
-	signal Addr2R:						std_logic_vector(7 downto 0):="00000000";
+	signal Addr2W:						std_logic_vector(19 downto 0):="00000000000000000000";
+	signal Addr2R:						std_logic_vector(19 downto 0):="00000000000000000000";
+	signal Addr:						std_logic_vector(19 downto 0):="00000000000000000000";
+	signal RW_RAM:						std_logic;
 	
 	
 	
@@ -159,11 +161,11 @@ begin
         clk             => clk,
         reset           => Reset,
         mem             => Emen,      
-        rw              => SW(17),
-        addr            => "000000000000" & Addr2W,
+        rw              => '0',
+        addr            => Addr,
         data_f2s        => DataFIFO2SRAM,
         ready           => Rdymen,
-        data_s2f_r      => LEDR(11 downto 0),
+        data_s2f_r      => AUX2,
         data_s2f_ur     => AUX1,
         -- To SRAM
         ad              => SRAM_ADDR,
@@ -177,22 +179,29 @@ begin
 
     );
 	
+	Addr <= Addr2W when (RW_RAM = '0') else Addr2R;
 	
-	EscrivirSRAM: process(clk)
+	Addr2R <= "000000000000" & SW(7 downto 0);
+	
+	RW_RAM <= SW(17);
+	
+	EscrivirSRAM: process(ReadFIFO)
 	begin
 	
-		if clk'event and clk = '1' then
-			if (Emen ='1') then
+		if ReadFIFO'event and ReadFIFO = '1' then
+			if (RW_RAM ='0') then
 				Addr2W <= Addr2W +'1';
 			end if;
 		end if; 
 	end process;
 	
-	Emen <= (Rdymen and (not FIFOempty) and SW(17)) or ....;
+	LEDG(5) <= ReadFIFO;
+	
+	Emen <= Rdymen and (not FIFOempty);
 	
 	ReadFIFO <= Emen;
 	
-	--LEDR(11 downto 0) <= DataFIFO2SRAM;
+	LEDR(11 downto 0) <= DataFIFO2SRAM;
 	
 	 Reg_Trigger: process(clk,Counter_Full) -- Biestable raro que retiene el Trigger!
 	 begin
@@ -250,8 +259,7 @@ begin
 	 
 	 
 	 
-	 
-	 
+	
 	 Counter_Full <= '1' when Counter_long = "1111" else '0';
 
 	 Reloj: process(CLOCK_50)
@@ -281,6 +289,6 @@ begin
 	
 	--LEDR(14 downto 12) <= Counter_DP_FIFO;
 	
-	Counter_DP_FIFO_Down <= not KEY(2);
+	--Counter_DP_FIFO_Down <= not KEY(2);
 	
 end rtl;
