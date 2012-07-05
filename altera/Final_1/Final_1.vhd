@@ -194,7 +194,7 @@ begin
 	
 	--LEDR(11 downto 0) <= DataFIFO2SRAM;
 	
-	 Reg_Trigger: process(clk,Counter_Full) -- Biestable raro que retiene el Trigger
+	 Reg_Trigger: process(clk,Counter_Full) -- Biestable raro que retiene el Trigger!
 	 begin
 	 
 		if clk'event and clk = '1' then 
