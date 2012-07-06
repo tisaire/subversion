@@ -13,6 +13,10 @@ entity Final_1 is
 		LEDR:			 out std_logic_vector(17 downto 0);
 		LEDG:			 out std_logic_vector(8 downto 0);
 		
+		HEX0:		 out std_logic_vector(6 downto 0);
+		HEX1:		 out std_logic_vector(6 downto 0);
+		
+		
 		--To SRAM
         SRAM_ADDR:          OUT std_logic_vector(19 downto 0);
         SRAM_WE_N:          OUT std_logic;
@@ -116,7 +120,7 @@ architecture rtl of Final_1 is
 	signal Rdymen:						std_logic;
 	signal Addr2W:						std_logic_vector(19 downto 0):="00000000000000000000";
 	signal Addr2R:						std_logic_vector(19 downto 0):="00000000000000000000";
-	signal Addr:						std_logic_vector(19 downto 0):="00000000000000000000";
+	signal Addr:						std_logic_vector(19 downto 0);
 	signal RW_RAM:						std_logic;
 	signal WriteFIFOpio:				std_logic;
 	signal ReadFIFOpio:				std_logic;
@@ -129,7 +133,7 @@ architecture rtl of Final_1 is
 begin
 
 
-	
+	HEX0(0) <= not clk;
 	
 	
 	U1 : GeneratorPD	-- fifo antes de la SRAM 
@@ -138,6 +142,10 @@ begin
         InPD 		=> not KEY(3),
         DataOut	=> DataGen2Buff
 	);
+	
+	 
+   --El buff siempre esta cogiendo valores
+	
 	
 	U2 : BufferDetector_1
 	port map (
@@ -148,96 +156,21 @@ begin
         Trigger	=> Trigger
 	);
 	
-	U3 : Fifo_1		-- fifo antes de la SRAM 
-	port map (
-			data		=> DataBuff2FIFO,
-			rdclk		=> clk,
-			rdreq		=> ReadFIFO,
-			wrclk		=> clk,
-			wrreq		=> WriteFIFO, 
-			q			=> DataFIFO2SRAM,
-			rdempty	=> FIFO1empty,
-			wrfull	=> FIFO1full
-	);
+	
+	 ReadBuffer	<=Trigger_reg;
+	 WriteFIFO	<=Trigger_reg;
+	
+	 HEX0(1) <=  not Trigger;
+	
+    HEX0(2) <=  not Trigger_reg;
+	
+	HEX0(3) <= '1';
+	HEX0(4) <= '1';
+	HEX0(5) <= '1';
+	HEX0(6) <= '1';
 	
 	
-	
-	SRAM: DriverSRAM 
-	port map (
-        clk             => clk,
-        reset           => Reset,
-        mem             => Emen,      
-        rw              => RW_RAM,
-        addr            => Addr,
-        data_f2s        => DataFIFO2SRAM,
-        ready           => Rdymen,
-        data_s2f_r      => AUX1,
-        data_s2f_ur     => DataSRAM2Fpio,
-        -- To SRAM
-        ad              => SRAM_ADDR,
-        we_n            => SRAM_WE_N,
-        oe_n            => SRAM_OE_N,
-        dio             => SRAM_DQ (11 downto 0),
-        ce_n            => SRAM_CE_N,
-        lb_n            => SRAM_LB_N,
-        ub_n            => SRAM_UB_N,
-        LEDG(4 downto 0)=> LEDG(4 downto 0)
-
-    );
-	
-	U4 : Fifo_1		-- fifo despues de la SRAM 
-	port map (
-			data		=> DataSRAM2Fpio,
-			rdclk		=> clk,
-			rdreq		=> ReadFIFOpio,
-			wrclk		=> clk,
-			wrreq		=> WriteFIFOpio, 
-			q			=> LEDR(11 downto 0),
-			rdempty	=> FIFO2empty,
-			wrfull	=> FIFO2full
-	);
-	
-	
-	EscrivirSRAM: process(ReadFIFO)
-	begin
-	
-		if ReadFIFO'event and ReadFIFO = '1' then
-			if (RW_RAM ='0') then
-				Addr2W <= Addr2W +'1';
-			end if;
-		end if; 
-	end process;
-	
-	
-	LeerSRAM: process(Emen)
-	begin
-	
-		if Emen'event and Emen = '1' then
-			if (RW_RAM ='1') then
-				Addr2R <= Addr2R +'1';
-			end if;
-		end if; 
-	end process;
-	
-	WriteFIFOpio <= (not Emen) and (RW_RAM);
-	
-	LEDG(7) <= FIFO2empty;
-	
-	Addr <= Addr2W when (RW_RAM = '0') else Addr2R;
-	
-	--Addr2R <= "000000000000" & SW(7 downto 0);
-	
-	RW_RAM <= SW(17);
-	
-	LEDG(5) <= WriteFIFOpio;
-	
-	Emen <= ( Rdymen and (not FIFO1empty) and (not RW_RAM) ) or ( Rdymen and (not FIFO2full) and RW_RAM );
-	
-	ReadFIFO <= Emen and (not RW_RAM);
-	
-	ReadFIFOpio <= not KEY(1);
-	
-	--LEDR(11 downto 0) <= DataFIFO2SRAM;
+	-- DP_readed <= '0' when KEY(2)= '0' else '1';
 	
 	 Reg_Trigger: process(clk,Counter_Full) -- Biestable raro que retiene el Trigger!
 	 begin
@@ -252,6 +185,8 @@ begin
 		
 	 end process;
 	 
+	 Counter_Full <= '1' when Counter_long = "1111" else '0';
+	 
 	 Contador_Trigger: process(clk) -- Contador de logitud de descarga
 	 begin
 		 if (clk'event and clk = '1') then
@@ -260,6 +195,120 @@ begin
 			end if;
 		end if;
 	 end process;
+	
+	
+	U3 : Fifo_1		-- fifo antes de la SRAM 
+	port map (
+			data		=> DataBuff2FIFO,
+			rdclk		=> not clk,
+			rdreq		=> ReadFIFO,
+			wrclk		=> clk,
+			wrreq		=> WriteFIFO, 
+			q			=> DataFIFO2SRAM,
+			rdempty	=> FIFO1empty,
+			wrfull	=> FIFO1full
+	);
+	
+	HEX1(1) <= not FIFO1empty;
+	
+   HEX1(2) <= not WriteFIFO;
+	
+	HEX1(3) <= not ReadFIFO;
+	
+	HEX1(4) <= not FIFO1full;
+	
+	HEX1(5) <= '1';
+	HEX1(6) <= '1';
+	
+	
+	
+	EscrivirSRAM: process(ReadFIFO) --Generar las direcciones de escritura de la RAM
+	begin
+		if ReadFIFO'event and ReadFIFO = '1' then 
+				Addr2W <= Addr2W +'1';
+		end if; 
+	end process;
+	
+	
+	ReadFIFO <= (Emen) and (not RW_RAM);
+	
+
+	SRAM: DriverSRAM 
+	port map (
+        clk             => clk,
+        reset           => Reset,
+        mem             => Emen,      
+        rw              => RW_RAM,
+        addr            => Addr,
+        data_f2s        => DataFIFO2SRAM,
+        ready           => Rdymen,
+        data_s2f_r      => DataSRAM2Fpio,
+        data_s2f_ur     => AUX1,
+        -- To SRAM
+        ad              => SRAM_ADDR,
+        we_n            => SRAM_WE_N,
+        oe_n            => SRAM_OE_N,
+        dio             => SRAM_DQ (11 downto 0),
+        ce_n            => SRAM_CE_N,
+        lb_n            => SRAM_LB_N,
+        ub_n            => SRAM_UB_N,
+        LEDG(4 downto 0)=> LEDG(4 downto 0)
+
+    );
+	 
+	  
+	RW_RAM <= SW(17); 
+	
+	LEDR(11 downto 0) <= DataSRAM2Fpio when SW(0) = '0' else DataFIFO2SRAM;
+	 
+	Emen <= ( Rdymen and (not FIFO1empty) and (not RW_RAM)) or (not KEY(0)) ;--( Rdymen and (not FIFO2full) and RW_RAM );
+	
+	Addr <= Addr2W when (RW_RAM = '0') else Addr2R;
+	
+	Addr2R <= "000000000000" & SW(7 downto 0);
+	
+	U4 : Fifo_1		-- fifo despues de la SRAM 
+	port map (
+			data		=> DataSRAM2Fpio,
+			rdclk		=> clk,
+			rdreq		=> ReadFIFOpio,
+			wrclk		=> clk,
+			wrreq		=> WriteFIFOpio, 
+			q			=> AUX2,
+			rdempty	=> FIFO2empty,
+			wrfull	=> FIFO2full
+	);
+	
+	
+	
+	
+	
+	LeerSRAM: process(WriteFIFOpio)
+	begin
+	
+		if WriteFIFOpio'event and WriteFIFOpio = '1' then
+			if (RW_RAM ='1') then
+	--			Addr2R <= Addr2R +'1';
+			end if;
+		end if; 
+	end process;
+	
+	--WriteFIFOpio <= (not Emen) and (RW_RAM);
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	--ReadFIFOpio <= not KEY(1);
+	
+	
+	
+	
 	 
 	 
 	 --LEDG(7 downto 4) <= Counter_Long;
@@ -295,10 +344,9 @@ begin
 	 
 	 
 	 
-	
-	 Counter_Full <= '1' when Counter_long = "1111" else '0';
 
-	 Reloj: process(CLOCK_50)
+
+	 Reloj: process(CLOCK_50)   --- reloj de 1,2 segundos 
     begin
 
         if (CLOCK_50'event and CLOCK_50 = '1') then
@@ -310,21 +358,6 @@ begin
             end if;
         end if;
     end process;
-	 
-	 
-	ReadBuffer	<=Trigger_reg;
-	WriteFIFO	<=Trigger_reg;
 	
-	LEDR(17) <= clk;
-	
-	LEDR(16) <= Trigger;
-	
-	LEDR(15) <= Trigger_reg;
-	
-	DP_readed <= '0' when KEY(2)= '0' else '1';
-	
-	--LEDR(14 downto 12) <= Counter_DP_FIFO;
-	
-	--Counter_DP_FIFO_Down <= not KEY(2);
 	
 end rtl;

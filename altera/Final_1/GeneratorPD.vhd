@@ -15,7 +15,7 @@ end GeneratorPD;
 
 architecture BH of GeneratorPD is
 
-	signal DataOut_buz:  	std_logic_vector(1 downto 0) :="00";
+	signal DataOut_buz:  	std_logic_vector(5 downto 0) :="000000";
 	signal DP:					std_logic;
 
 begin
@@ -25,8 +25,8 @@ begin
 	
 		if (clk'event and clk='1') then
 			DataOut_buz <= DataOut_buz + '1';
-			if (DataOut_buz = "11")	then 
-				DataOut_buz <= "00";
+			if (DataOut_buz = "111111")	then 
+				DataOut_buz <= "000000";
 			end if;
 			
 			--DP <= InPD;
@@ -36,6 +36,6 @@ begin
 	
 	DP <= InPD;
 	
-	DataOut <= ("0000000000" & DataOut_buz) when InPD='0' else "111111111111";
+	DataOut <= ("000000" & DataOut_buz) when InPD='0' else "111111111111";
 
 end BH;
