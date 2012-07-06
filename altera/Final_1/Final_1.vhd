@@ -109,7 +109,8 @@ architecture rtl of Final_1 is
 	signal ReadFIFO:					std_logic;
 	signal Counter_Full:				std_logic := '0';
 	signal DP_readed:					std_logic;
-	signal FIFOempty:					std_logic;
+	signal FIFO1empty:					std_logic;
+	signal FIFO2empty:					std_logic;
 	signal Reset:						std_logic;
 	signal Emen:						std_logic;
 	signal Rdymen:						std_logic;
@@ -118,7 +119,9 @@ architecture rtl of Final_1 is
 	signal Addr:						std_logic_vector(19 downto 0):="00000000000000000000";
 	signal RW_RAM:						std_logic;
 	signal WriteFIFOpio:				std_logic;
-	signal ReadFIFOpio:				std_logic
+	signal ReadFIFOpio:				std_logic;
+	signal FIFO1full:					std_logic;
+	signal FIFO2full:					std_logic;
 	
 	
 	
@@ -153,13 +156,13 @@ begin
 			wrclk		=> clk,
 			wrreq		=> WriteFIFO, 
 			q			=> DataFIFO2SRAM,
-			rdempty	=> FIFOempty,
-			wrfull	=> LEDG(6)
+			rdempty	=> FIFO1empty,
+			wrfull	=> FIFO1full
 	);
 	
 	
 	
-	SRAM: component DriverSRAM 
+	SRAM: DriverSRAM 
 	port map (
         clk             => clk,
         reset           => Reset,
@@ -168,8 +171,8 @@ begin
         addr            => Addr,
         data_f2s        => DataFIFO2SRAM,
         ready           => Rdymen,
-        data_s2f_r      => LEDR(11 downto 0),
-        data_s2f_ur     => AUX1,
+        data_s2f_r      => AUX1,
+        data_s2f_ur     => DataSRAM2Fpio,
         -- To SRAM
         ad              => SRAM_ADDR,
         we_n            => SRAM_WE_N,
@@ -182,6 +185,17 @@ begin
 
     );
 	
+	U4 : Fifo_1		-- fifo despues de la SRAM 
+	port map (
+			data		=> DataSRAM2Fpio,
+			rdclk		=> clk,
+			rdreq		=> ReadFIFOpio,
+			wrclk		=> clk,
+			wrreq		=> WriteFIFOpio, 
+			q			=> LEDR(11 downto 0),
+			rdempty	=> FIFO2empty,
+			wrfull	=> FIFO2full
+	);
 	
 	
 	EscrivirSRAM: process(ReadFIFO)
@@ -195,30 +209,33 @@ begin
 	end process;
 	
 	
-	LeerSRAM: process(ReadFIFO)
+	LeerSRAM: process(Emen)
 	begin
 	
-		if ReadFIFO'event and ReadFIFO = '1' then
-			if (RW_RAM ='0') then
-				Addr2W <= Addr2W +'1';
+		if Emen'event and Emen = '1' then
+			if (RW_RAM ='1') then
+				Addr2R <= Addr2R +'1';
 			end if;
 		end if; 
 	end process;
 	
+	WriteFIFOpio <= (not Emen) and (RW_RAM);
 	
-	LEDG(7) <= FIFOempty;
+	LEDG(7) <= FIFO2empty;
 	
 	Addr <= Addr2W when (RW_RAM = '0') else Addr2R;
 	
-	Addr2R <= "000000000000" & SW(7 downto 0);
+	--Addr2R <= "000000000000" & SW(7 downto 0);
 	
 	RW_RAM <= SW(17);
 	
-	LEDG(5) <= ReadFIFO;
+	LEDG(5) <= WriteFIFOpio;
 	
-	Emen <= ( Rdymen and (not FIFOempty) and (not RW_RAM) ) or (not KEY(1));
+	Emen <= ( Rdymen and (not FIFO1empty) and (not RW_RAM) ) or ( Rdymen and (not FIFO2full) and RW_RAM );
 	
 	ReadFIFO <= Emen and (not RW_RAM);
+	
+	ReadFIFOpio <= not KEY(1);
 	
 	--LEDR(11 downto 0) <= DataFIFO2SRAM;
 	
