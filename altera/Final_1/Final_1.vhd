@@ -113,8 +113,8 @@ architecture rtl of Final_1 is
 	signal ReadFIFO:					std_logic;
 	signal Counter_Full:				std_logic := '0';
 	signal DP_readed:					std_logic;
-	signal FIFO1empty:					std_logic;
-	signal FIFO2empty:					std_logic;
+	signal FIFO1empty:				std_logic;
+	signal FIFO2empty:				std_logic;
 	signal Reset:						std_logic;
 	signal Emen:						std_logic;
 	signal Rdymen:						std_logic;
@@ -209,17 +209,17 @@ begin
 			wrfull	=> FIFO1full
 	);
 	
-	HEX1(1) <= not FIFO1empty;
+	HEX1(0) <= not FIFO1empty;
 	
-   HEX1(2) <= not WriteFIFO;
+   HEX1(1) <= not WriteFIFO;
 	
-	HEX1(3) <= not ReadFIFO;
+	HEX1(2) <= not ReadFIFO;
 	
-	HEX1(4) <= not FIFO1full;
+	HEX1(3) <= not FIFO1full;
 	
+	HEX1(4) <= '1';
 	HEX1(5) <= '1';
 	HEX1(6) <= '1';
-	
 	
 	
 	EscrivirSRAM: process(ReadFIFO) --Generar las direcciones de escritura de la RAM
@@ -259,7 +259,13 @@ begin
 	  
 	RW_RAM <= SW(17); 
 	
-	LEDR(11 downto 0) <= DataSRAM2Fpio when SW(0) = '0' else DataFIFO2SRAM;
+	LEDR(11 downto 0) <= DataGen2Buff 				when SW(16 downto 14) = "000" else 
+								DataBuff2FIFO 				when SW(16 downto 14) = "001" else 
+								DataFIFO2SRAM 				when SW(16 downto 14) = "010" else 
+								DataSRAM2Fpio 				when SW(16 downto 14) = "011" else
+								Addr2R(11 downto 0)		when SW(16 downto 14) = "101" else
+								Addr2W(11 downto 0)		when SW(16 downto 14) = "100";
+								
 	 
 	Emen <= ( Rdymen and (not FIFO1empty) and (not RW_RAM)) or (not KEY(0)) ;--( Rdymen and (not FIFO2full) and RW_RAM );
 	
@@ -312,6 +318,8 @@ begin
 	 
 	 
 	 --LEDG(7 downto 4) <= Counter_Long;
+	 
+	 
 	 
 	 
 	 Contador_D_FIFO: process(clk) -- Contador de descargar dentro de la FIFO
