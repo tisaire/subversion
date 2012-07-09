@@ -1,0 +1,476 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body {
+			font-family : verdana;
+		}
+		td, th {
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;
+		}
+		th {
+			background-color : #A6CAF0;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+		}
+		
+		.DRC_summary_header {							
+			padding-bottom : 0.1em;
+			border : 0px solid black;							
+			width: 100%;
+                        align: right;
+                        
+		}
+
+		.DRC_summary_header_col1, 
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3
+		{
+			color : black;
+			font-size:150%;
+                        padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2: 0em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top;
+			font-weight: bold;				
+		}
+		
+		.DRC_summary_header_col1 	
+		{		                       
+			text-align: right;
+                        width: auto;	
+		}
+
+		.DRC_summary_header_col2 	
+		{		
+			text-align: center;	
+		}
+
+		.DRC_summary_header_col3 	
+		{		
+			text-align: left;	
+		}
+
+
+		
+		.header_holder
+		{
+		Width = 100%;
+		border = 0px solid green;
+		padding = 0;
+		}
+		
+		
+		
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+                {
+			left:0;
+			top:0;
+			padding-top : 0.1em;			
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top
+
+		}
+		.front_matter {	
+			
+			margin-top: 5px;
+ 			margin-left: 0px;					 			
+ 			horizontal-align: left;
+		}
+				
+		
+		.front_matter_column1 {
+			width : 10em;	
+			text-align  : right;
+			padding-right:0.1em;
+			
+		}
+		
+		.front_matter_column2 {
+                        width: 0.1em;
+			align: center;
+			text-align : center;
+			margin-right  : 0.1em;	
+			margin-left   : 0.1em;
+		}
+		.front_matter_column3 {
+			width         : auto;  
+			text-align    : left;	
+			margin-right  : 0.5em;				
+		}
+		
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD 10\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td Style="width:70%">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">10/07/2012</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">0:51:11</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:00:04</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc" class="file"><acronym title="C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc">C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td Style="Width:30%">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations</td>
+<td class="DRC_summary_header_col2">:</td>
+<td class="DRC_summary_header_col3" style="color : red">31</td></tr>
+</table>
+</td>
+</table>
+<hr><a name="IDASACNC"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAEBCNC">Clearance Constraint (Gap=8mil) (InNetClass('AMP2')),(InNamedPolygon('TOP_GND_POLY'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAKBCNC">Clearance Constraint (Gap=8mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAQBCNC">Clearance Constraint (Gap=8mil) (InNetClass('AMP1')),(InNamedPolygon('TOP_IMP_GND1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAWBCNC">Width Constraint (Min=6mil) (Max=70mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDA2BCNC">Power Plane Connect Rule(Direct Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDACCCNC">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAICCNC">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAOCCNC">Hole Size Constraint (Min=10mil) (Max=100mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAUCCNC">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDA0CCNC">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAADCNC">Minimum Solder Mask Sliver (Gap=5mil) (All),(All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDABECNC">Silkscreen Over Component Pads (Clearance=6mil) (All),(All)</a></td>
+<td class="column2">20</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDA4RCNC">Silk to Silk (Clearance=6mil) (All),(All)</a></td>
+<td class="column2">8</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAMUCNC">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">31</td>
+</tr>
+</table><br><hr><a name="IDAADCNC"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Minimum Solder Mask Sliver (Gap=5mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11862.299mil|Location2.X=11909.701mil|Location1.Y=4237.685mil|Location2.Y=4277.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11862.299mil|Location2.X=11909.701mil|Location1.Y=4237.685mil|Location2.Y=4277.213mil|Absolute=True">Pad R4-2(11886mil,4257.449mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11750mil|Location2.X=11860mil|Location1.Y=4259.52mil|Location2.Y=4334.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11750mil|Location2.X=11860mil|Location1.Y=4259.52mil|Location2.Y=4334.48mil|Absolute=True">Pad T1-1(11805mil,4297mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10817.717mil|Location2.X=10871.024mil|Location1.Y=4443.457mil|Location2.Y=4510.543mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10817.717mil|Location2.X=10871.024mil|Location1.Y=4443.457mil|Location2.Y=4510.543mil|Absolute=True">Pad C47-1(10844.37mil,4477mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10875.63mil|Location2.X=10964.37mil|Location1.Y=4441.63mil|Location2.Y=4530.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10875.63mil|Location2.X=10964.37mil|Location1.Y=4441.63mil|Location2.Y=4530.37mil|Absolute=True">Pad J3-1(10920mil,4486mil)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9766.457mil|Location2.X=9833.543mil|Location1.Y=4123.346mil|Location2.Y=4176.654mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9766.457mil|Location2.X=9833.543mil|Location1.Y=4123.346mil|Location2.Y=4176.654mil|Absolute=True">Pad C10-2(9800mil,4150mil)  Bottom Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9673.63mil|Location2.X=9762.37mil|Location1.Y=4131.63mil|Location2.Y=4220.37mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9673.63mil|Location2.X=9762.37mil|Location1.Y=4131.63mil|Location2.Y=4220.37mil|Absolute=True">Pad J5-1(9718mil,4176mil)  Multi-Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDABECNC"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silkscreen Over Component Pads (Clearance=6mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11054.685mil|Location2.X=11094.213mil|Location1.Y=4493.299mil|Location2.Y=4540.701mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11054.685mil|Location2.X=11094.213mil|Location1.Y=4493.299mil|Location2.Y=4540.701mil|Absolute=True">Pad R1-1(11074.449mil,4517mil)  Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11059.685mil|Location2.X=11079.37mil|Location1.Y=4489.52mil|Location2.Y=4509.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11059.685mil|Location2.X=11079.37mil|Location1.Y=4489.52mil|Location2.Y=4509.205mil|Absolute=True">Arc (11069.528mil,4499.362mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11524mil|Location2.X=11583.984mil|Location1.Y=4330mil|Location2.Y=4369.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11524mil|Location2.X=11583.984mil|Location1.Y=4330mil|Location2.Y=4369.99mil|Absolute=True">Text "C2" (11529mil,4335mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11550mil|Location2.X=11660mil|Location1.Y=4259.52mil|Location2.Y=4334.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11550mil|Location2.X=11660mil|Location1.Y=4259.52mil|Location2.Y=4334.48mil|Absolute=True">Pad T1-6(11605mil,4297mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11524mil|Location2.X=11583.984mil|Location1.Y=4330mil|Location2.Y=4369.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11524mil|Location2.X=11583.984mil|Location1.Y=4330mil|Location2.Y=4369.99mil|Absolute=True">Text "C2" (11529mil,4335mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11550mil|Location2.X=11660mil|Location1.Y=4359.52mil|Location2.Y=4434.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=11550mil|Location2.X=11660mil|Location1.Y=4359.52mil|Location2.Y=4434.48mil|Absolute=True">Pad T1-5(11605mil,4397mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True">Text "R6" (10016mil,4424mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9968.299mil|Location2.X=10015.701mil|Location1.Y=4413.685mil|Location2.Y=4453.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9968.299mil|Location2.X=10015.701mil|Location1.Y=4413.685mil|Location2.Y=4453.213mil|Absolute=True">Pad R6-1(9992mil,4433.449mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True">Text "R6" (10016mil,4424mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9968.299mil|Location2.X=10015.701mil|Location1.Y=4344.787mil|Location2.Y=4384.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9968.299mil|Location2.X=10015.701mil|Location1.Y=4344.787mil|Location2.Y=4384.315mil|Absolute=True">Pad R6-2(9992mil,4364.551mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True">Text "R6" (10016mil,4424mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10046.299mil|Location2.X=10093.701mil|Location1.Y=4409.787mil|Location2.Y=4449.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10046.299mil|Location2.X=10093.701mil|Location1.Y=4409.787mil|Location2.Y=4449.315mil|Absolute=True">Pad R14-1(10070mil,4429.551mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True">Text "R6" (10016mil,4424mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10046.299mil|Location2.X=10093.701mil|Location1.Y=4350.685mil|Location2.Y=4390.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10046.299mil|Location2.X=10093.701mil|Location1.Y=4350.685mil|Location2.Y=4390.213mil|Absolute=True">Pad R25-2(10070mil,4370.449mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9791.51mil|Location2.X=9831.5mil|Location1.Y=5093.5mil|Location2.Y=5173.477mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9791.51mil|Location2.X=9831.5mil|Location1.Y=5093.5mil|Location2.Y=5173.477mil|Absolute=True">Text "C31" (9826.5mil,5098.5mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9728.457mil|Location2.X=9795.543mil|Location1.Y=5124.976mil|Location2.Y=5178.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9728.457mil|Location2.X=9795.543mil|Location1.Y=5124.976mil|Location2.Y=5178.283mil|Absolute=True">Pad C32-2(9762mil,5151.63mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True">Text "C56" (9385mil,4437mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9336.299mil|Location2.X=9383.701mil|Location1.Y=4414.685mil|Location2.Y=4454.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9336.299mil|Location2.X=9383.701mil|Location1.Y=4414.685mil|Location2.Y=4454.213mil|Absolute=True">Pad C17-1(9360mil,4434.449mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True">Text "C56" (9385mil,4437mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9336.299mil|Location2.X=9383.701mil|Location1.Y=4345.787mil|Location2.Y=4385.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9336.299mil|Location2.X=9383.701mil|Location1.Y=4345.787mil|Location2.Y=4385.315mil|Absolute=True">Pad C17-2(9360mil,4365.551mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True">Text "C56" (9385mil,4437mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9416.299mil|Location2.X=9463.701mil|Location1.Y=4345.787mil|Location2.Y=4385.315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9416.299mil|Location2.X=9463.701mil|Location1.Y=4345.787mil|Location2.Y=4385.315mil|Absolute=True">Pad C56-1(9440mil,4365.551mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True">Text "C56" (9385mil,4437mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9416.299mil|Location2.X=9463.701mil|Location1.Y=4414.685mil|Location2.Y=4454.213mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9416.299mil|Location2.X=9463.701mil|Location1.Y=4414.685mil|Location2.Y=4454.213mil|Absolute=True">Pad C56-2(9440mil,4434.449mil)  Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9782.5mil|Location2.X=9867.476mil|Location1.Y=4085.88mil|Location2.Y=4125.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9782.5mil|Location2.X=9867.476mil|Location1.Y=4085.88mil|Location2.Y=4125.87mil|Absolute=True">Text "C10" (9787.5mil,4120.87mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9766.457mil|Location2.X=9833.543mil|Location1.Y=4123.346mil|Location2.Y=4176.654mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9766.457mil|Location2.X=9833.543mil|Location1.Y=4123.346mil|Location2.Y=4176.654mil|Absolute=True">Pad C10-2(9800mil,4150mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9782.5mil|Location2.X=9867.476mil|Location1.Y=4085.88mil|Location2.Y=4125.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9782.5mil|Location2.X=9867.476mil|Location1.Y=4085.88mil|Location2.Y=4125.87mil|Absolute=True">Text "C10" (9787.5mil,4120.87mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9846.457mil|Location2.X=9913.543mil|Location1.Y=4123.346mil|Location2.Y=4176.654mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9846.457mil|Location2.X=9913.543mil|Location1.Y=4123.346mil|Location2.Y=4176.654mil|Absolute=True">Pad C11-2(9880mil,4150mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9866mil|Location2.X=9940.979mil|Location1.Y=4085.608mil|Location2.Y=4125.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9866mil|Location2.X=9940.979mil|Location1.Y=4085.608mil|Location2.Y=4125.598mil|Absolute=True">Text "C11" (9871mil,4120.598mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9846.457mil|Location2.X=9913.543mil|Location1.Y=4123.346mil|Location2.Y=4176.654mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9846.457mil|Location2.X=9913.543mil|Location1.Y=4123.346mil|Location2.Y=4176.654mil|Absolute=True">Pad C11-2(9880mil,4150mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9714.526mil|Location2.X=9804.5mil|Location1.Y=4603.5mil|Location2.Y=4643.49mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9714.526mil|Location2.X=9804.5mil|Location1.Y=4603.5mil|Location2.Y=4643.49mil|Absolute=True">Text "C25" (9799.5mil,4608.5mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9753.457mil|Location2.X=9820.543mil|Location1.Y=4552.717mil|Location2.Y=4606.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9753.457mil|Location2.X=9820.543mil|Location1.Y=4552.717mil|Location2.Y=4606.024mil|Absolute=True">Pad C25-2(9787mil,4579.37mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9805.026mil|Location2.X=9895mil|Location1.Y=4603mil|Location2.Y=4642.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9805.026mil|Location2.X=9895mil|Location1.Y=4603mil|Location2.Y=4642.99mil|Absolute=True">Text "C26" (9890mil,4608mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9753.457mil|Location2.X=9820.543mil|Location1.Y=4552.717mil|Location2.Y=4606.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9753.457mil|Location2.X=9820.543mil|Location1.Y=4552.717mil|Location2.Y=4606.024mil|Absolute=True">Pad C25-2(9787mil,4579.37mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9805.026mil|Location2.X=9895mil|Location1.Y=4603mil|Location2.Y=4642.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9805.026mil|Location2.X=9895mil|Location1.Y=4603mil|Location2.Y=4642.99mil|Absolute=True">Text "C26" (9890mil,4608mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9833.457mil|Location2.X=9900.543mil|Location1.Y=4552.717mil|Location2.Y=4606.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9833.457mil|Location2.X=9900.543mil|Location1.Y=4552.717mil|Location2.Y=4606.024mil|Absolute=True">Pad C26-2(9867mil,4579.37mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10804.01mil|Location2.X=10844mil|Location1.Y=4954.892mil|Location2.Y=5044.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10804.01mil|Location2.X=10844mil|Location1.Y=4954.892mil|Location2.Y=5044.866mil|Absolute=True">Text "FB5" (10839mil,5039.866mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10744.457mil|Location2.X=10811.543mil|Location1.Y=5012.717mil|Location2.Y=5066.024mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10744.457mil|Location2.X=10811.543mil|Location1.Y=5012.717mil|Location2.Y=5066.024mil|Absolute=True">Pad C40-1(10778mil,5039.37mil)  Bottom Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10804.01mil|Location2.X=10844mil|Location1.Y=4954.892mil|Location2.Y=5044.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10804.01mil|Location2.X=10844mil|Location1.Y=4954.892mil|Location2.Y=5044.866mil|Absolute=True">Text "FB5" (10839mil,5039.866mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10744.457mil|Location2.X=10811.543mil|Location1.Y=4933.976mil|Location2.Y=4987.283mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10744.457mil|Location2.X=10811.543mil|Location1.Y=4933.976mil|Location2.Y=4987.283mil|Absolute=True">Pad C40-2(10778mil,4960.63mil)  Bottom Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDA4RCNC"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Silk to Silk (Clearance=6mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9791.51mil|Location2.X=9831.5mil|Location1.Y=5093.5mil|Location2.Y=5173.477mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9791.51mil|Location2.X=9831.5mil|Location1.Y=5093.5mil|Location2.Y=5173.477mil|Absolute=True">Text "C31" (9826.5mil,5098.5mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9825.575mil|Location2.X=9889.983mil|Location1.Y=5102.966mil|Location2.Y=5289.034mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9825.575mil|Location2.X=9889.983mil|Location1.Y=5102.966mil|Location2.Y=5289.034mil|Absolute=True">Arc (9929mil,5196mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10011mil|Location2.X=10050.99mil|Location1.Y=4369.016mil|Location2.Y=4429mil|Absolute=True">Text "R6" (10016mil,4424mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10002.827mil|Location2.X=10010.701mil|Location1.Y=4391.126mil|Location2.Y=4406.874mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=10002.827mil|Location2.X=10010.701mil|Location1.Y=4391.126mil|Location2.Y=4406.874mil|Absolute=True">Track (10006.764mil,4395.063mil)(10006.764mil,4402.937mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True">Text "C56" (9385mil,4437mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9370.827mil|Location2.X=9378.701mil|Location1.Y=4392.126mil|Location2.Y=4407.874mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9370.827mil|Location2.X=9378.701mil|Location1.Y=4392.126mil|Location2.Y=4407.874mil|Absolute=True">Track (9374.764mil,4396.063mil)(9374.764mil,4403.937mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9380mil|Location2.X=9419.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True">Text "C56" (9385mil,4437mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9421.299mil|Location2.X=9429.173mil|Location1.Y=4392.126mil|Location2.Y=4407.874mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9421.299mil|Location2.X=9429.173mil|Location1.Y=4392.126mil|Location2.Y=4407.874mil|Absolute=True">Track (9425.236mil,4396.063mil)(9425.236mil,4403.937mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9013mil|Location2.X=9052.99mil|Location1.Y=4357.024mil|Location2.Y=4442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9013mil|Location2.X=9052.99mil|Location1.Y=4357.024mil|Location2.Y=4442mil|Absolute=True">Text "C19" (9018mil,4437mil)  Top Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8972mil|Location2.X=9011.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8972mil|Location2.X=9011.99mil|Location1.Y=4352.026mil|Location2.Y=4442mil|Absolute=True">Text "C20" (8977mil,4437mil)  Top Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9523mil|Location2.X=9612.974mil|Location1.Y=4040.01mil|Location2.Y=4080mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9523mil|Location2.X=9612.974mil|Location1.Y=4040.01mil|Location2.Y=4080mil|Absolute=True">Text "R29" (9528mil,4075mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9613.5mil|Location2.X=9703.474mil|Location1.Y=4039.51mil|Location2.Y=4079.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9613.5mil|Location2.X=9703.474mil|Location1.Y=4039.51mil|Location2.Y=4079.5mil|Absolute=True">Text "R30" (9618.5mil,4074.5mil)  Bottom Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9714.526mil|Location2.X=9804.5mil|Location1.Y=4603.5mil|Location2.Y=4643.49mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9714.526mil|Location2.X=9804.5mil|Location1.Y=4603.5mil|Location2.Y=4643.49mil|Absolute=True">Text "C25" (9799.5mil,4608.5mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9805.026mil|Location2.X=9895mil|Location1.Y=4603mil|Location2.Y=4642.99mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9805.026mil|Location2.X=9895mil|Location1.Y=4603mil|Location2.Y=4642.99mil|Absolute=True">Text "C26" (9890mil,4608mil)  Bottom Overlay</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9782.5mil|Location2.X=9867.476mil|Location1.Y=4085.88mil|Location2.Y=4125.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9782.5mil|Location2.X=9867.476mil|Location1.Y=4085.88mil|Location2.Y=4125.87mil|Absolute=True">Text "C10" (9787.5mil,4120.87mil)  Bottom Overlay</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9866mil|Location2.X=9940.979mil|Location1.Y=4085.608mil|Location2.Y=4125.598mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\TiSA\Documents\Partial Discharge\Altium\PCB_Amp_1\PCB1.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=9866mil|Location2.X=9940.979mil|Location1.Y=4085.608mil|Location2.Y=4125.598mil|Absolute=True">Text "C11" (9871mil,4120.598mil)  Bottom Overlay</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>
