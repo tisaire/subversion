@@ -15,6 +15,7 @@ entity Final_1 is
 		
 		HEX0:		 out std_logic_vector(6 downto 0);
 		HEX1:		 out std_logic_vector(6 downto 0);
+		HEX2:		 out std_logic_vector(6 downto 0);
 		
 		
 		--To SRAM
@@ -97,6 +98,7 @@ architecture rtl of Final_1 is
 	signal DataBuff2FIFO:	std_logic_vector(11 downto 0);
 	signal DataFIFO2SRAM:	std_logic_vector(11 downto 0);
 	signal DataSRAM2Fpio:	std_logic_vector(11 downto 0);
+	signal DataFpio2Nios:	std_logic_vector(11 downto 0); 
 	
 	signal AUX1:					std_logic_vector(11 downto 0);
 	signal AUX2:					std_logic_vector(11 downto 0);
@@ -255,23 +257,26 @@ begin
         LEDG(4 downto 0)=> LEDG(4 downto 0)
 
     );
+						
 	 
-	  
-	RW_RAM <= SW(17); 
-	
-	LEDR(11 downto 0) <= DataGen2Buff 				when SW(16 downto 14) = "000" else 
-								DataBuff2FIFO 				when SW(16 downto 14) = "001" else 
-								DataFIFO2SRAM 				when SW(16 downto 14) = "010" else 
-								DataSRAM2Fpio 				when SW(16 downto 14) = "011" else
-								Addr2R(11 downto 0)		when SW(16 downto 14) = "101" else
-								Addr2W(11 downto 0)		when SW(16 downto 14) = "100";
-								
-	 
-	Emen <= ( Rdymen and (not FIFO1empty) and (not RW_RAM)) or (not KEY(0)) ;--( Rdymen and (not FIFO2full) and RW_RAM );
+	Emen <= ( Rdymen and (not FIFO1empty) and (not RW_RAM)) or ( Rdymen and (not FIFO2full) and RW_RAM) ;--( Rdymen and (not FIFO2full) and RW_RAM );
 	
 	Addr <= Addr2W when (RW_RAM = '0') else Addr2R;
 	
-	Addr2R <= "000000000000" & SW(7 downto 0);
+	--Addr2R <= "000000000000" & SW(7 downto 0);
+	
+	
+	LeerSRAM: process(WriteFIFOpio)
+	begin
+	
+		if WriteFIFOpio'event and WriteFIFOpio = '1' then
+			if (RW_RAM ='1') then
+				Addr2R <= Addr2R +'1';
+			end if;
+		end if; 
+	end process;
+	
+	WriteFIFOpio <= (Emen) and (RW_RAM);
 	
 	U4 : Fifo_1		-- fifo despues de la SRAM 
 	port map (
@@ -280,37 +285,37 @@ begin
 			rdreq		=> ReadFIFOpio,
 			wrclk		=> clk,
 			wrreq		=> WriteFIFOpio, 
-			q			=> AUX2,
+			q			=> DataFpio2Nios,
 			rdempty	=> FIFO2empty,
 			wrfull	=> FIFO2full
 	);
 	
 	
+	HEX2(0) <= not FIFO2empty;
+	
+   HEX2(1) <= not WriteFIFOpio;
+	
+	HEX2(2) <= not ReadFIFOpio;
+	
+	HEX2(3) <= not FIFO2full;
+	
+	HEX2(4) <= '1';
+	HEX2(5) <= '1';
+	HEX2(6) <= '1';
 	
 	
-	
-	LeerSRAM: process(WriteFIFOpio)
-	begin
-	
-		if WriteFIFOpio'event and WriteFIFOpio = '1' then
-			if (RW_RAM ='1') then
-	--			Addr2R <= Addr2R +'1';
-			end if;
-		end if; 
-	end process;
-	
-	--WriteFIFOpio <= (not Emen) and (RW_RAM);
+	LEDR(11 downto 0) <= DataGen2Buff 				when SW(16 downto 14) = "000" else 
+								DataBuff2FIFO 				when SW(16 downto 14) = "001" else 
+								DataFIFO2SRAM 				when SW(16 downto 14) = "010" else 
+								DataSRAM2Fpio 				when SW(16 downto 14) = "011" else
+								DataFpio2Nios 				when SW(16 downto 14) = "100" else
+								Addr2R(11 downto 0)		when SW(16 downto 14) = "111" else
+								Addr2W(11 downto 0)		when SW(16 downto 14) = "110";
 	
 	
+	RW_RAM <= SW(17); 
 	
-	
-	
-	
-
-	
-	
-	
-	--ReadFIFOpio <= not KEY(1);
+	ReadFIFOpio <= not KEY(1);
 	
 	
 	
@@ -333,6 +338,7 @@ begin
 			end if;
 		end if;
 	 end process;
+	 
 	 
 	 Flanco_Triger_Contador: process(clk) -- Gennerador del Down para en contador a partir de Trigger_reg
 	 begin
