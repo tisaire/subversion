@@ -479,9 +479,9 @@ void SSSNiosIISimpleSocketServerTask()
         max_socket = conn.fd+1;
       }
     }
-
+    printf("pre select\n");
     select(max_socket, &readfds, NULL, NULL, NULL);
-
+    printf("post select\n");
     /*
      * If fd_listen (the listening socket we originally created in this thread
      * is "set" in readfs, then we have an incoming connection request. We'll
@@ -492,6 +492,7 @@ void SSSNiosIISimpleSocketServerTask()
     if (FD_ISSET(fd_listen, &readfds))
     {
       SSS_handle_accept(fd_listen, &conn);
+      printf("handle accepted\n");
     }
     /*
      * If SSS_handle_accept() accepts the connection, it creates *another*
@@ -509,6 +510,172 @@ void SSSNiosIISimpleSocketServerTask()
       }
     }
   } /* while(1) */
+}
+
+void SSSNiosIISimpleSocketServerPeneTask(void)
+{
+	int fd_listen, max_socket;
+	struct sockaddr_in addr;
+	static SSSConn conn;
+	fd_set readfds;
+	char *mesg;
+	int msg_len;
+
+
+
+	INT8U tx_buf[SSS_TX_BUF_SIZE];
+	INT8U *tx_wr_pos = tx_buf;
+
+  /*
+   * Sockets primer...
+   * The socket() call creates an endpoint for TCP of UDP communication. It
+   * returns a descriptor (similar to a file descriptor) that we call fd_listen,
+   * or, "the socket we're listening on for connection requests" in our SSS
+   * server example.
+   */
+  if ((fd_listen = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+  {
+	alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Socket creation failed");
+  }
+
+  /*
+   * Sockets primer, continued...
+   * Calling bind() associates a socket created with socket() to a particular IP
+   * port and incoming address. In this case we're binding to SSS_PORT and to
+   * INADDR_ANY address (allowing anyone to connect to us. Bind may fail for
+   * various reasons, but the most common is that some other socket is bound to
+   * the port we're requesting.
+   */
+  addr.sin_family = AF_INET;
+  addr.sin_port = htons(PENE_PORT);
+  addr.sin_addr.s_addr = INADDR_ANY;
+
+  if ((bind(fd_listen,(struct sockaddr *)&addr,sizeof(addr))) < 0)
+  {
+	alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Bind failed");
+  }
+
+  /*
+   * Sockets primer, continued...
+   * The listen socket is a socket which is waiting for incoming connections.
+   * This call to listen will block (i.e. not return) until someone tries to
+   * connect to this port.
+   */
+  if ((listen(fd_listen,1)) < 0)
+  {
+	alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Listen failed");
+  }
+
+  /* At this point we have successfully created a socket which is listening
+   * on SSS_PORT for connection requests from any remote address.
+   */
+  SSS_reset_connection(&conn);
+  printf("[PENE_task] Nios II Simple Socket Server listening on port %d\n", PENE_PORT);
+
+  while(1)
+  {
+		/*
+		 * For those not familiar with sockets programming...
+		 * The select() call below basically tells the TCPIP stack to return
+		 * from this call when any of the events I have expressed an interest
+		 * in happen (it blocks until our call to select() is satisfied).
+		 *
+		 * In the call below we're only interested in either someone trying to
+		 * connect to us, or data being available to read on a socket, both of
+		 * these are a read event as far as select is called.
+		 *
+		 * The sockets we're interested in are passed in in the readfds
+		 * parameter, the format of the readfds is implementation dependant
+		 * Hence there are standard MACROs for setting/reading the values:
+		 *
+		 *   FD_ZERO  - Zero's out the sockets we're interested in
+		 *   FD_SET   - Adds a socket to those we're interested in
+		 *   FD_ISSET - Tests whether the chosen socket is set
+		 */
+		FD_ZERO(&readfds);
+		FD_SET(fd_listen, &readfds);
+		max_socket = fd_listen+1;
+
+		if (conn.fd != -1)
+		{
+		  FD_SET(conn.fd, &readfds);
+		  if (max_socket <= conn.fd)
+		  {
+			max_socket = conn.fd+1;
+		  }
+		}
+		printf("PENE pre select\n");
+		select(max_socket, &readfds, NULL, NULL, NULL);
+		printf("PENE post select\n");
+		/*
+		 * If fd_listen (the listening socket we originally created in this thread
+		 * is "set" in readfs, then we have an incoming connection request. We'll
+		 * call a routine to explicitly accept or deny the incoming connection
+		 * request (in this example, we accept a single connection and reject any
+		 * others that come in while the connection is open).
+		 */
+		if (FD_ISSET(fd_listen, &readfds))
+		{
+		  SSS_handle_accept(fd_listen, &conn);
+		  printf("handle accepted\n");
+		}
+		/*
+		 * If SSS_handle_accept() accepts the connection, it creates *another*
+		 * socket for sending/receiving data over SSS. Note that this socket is
+		 * independant of the listening socket we created above. This socket's
+		 * descriptor is stored in conn.fd. If conn.fs is set in readfs... we have
+		 * incoming data for our SSS server, and we call our receiver routine
+		 * to process it.
+		 */
+		else
+		{
+		  if ((conn.fd != -1) && FD_ISSET(conn.fd, &readfds))
+		  {
+			SSS_handle_receive(&conn);
+			printf("handle received\n");
+		  }
+		}
+		//OSTimeDlyHMSM(0,0,1,0);
+
+		//Generate mesg
+		mesg="pene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\n";
+		//mesg=strcat(mesg,mesg);
+		msg_len=strlen(mesg);
+
+		printf("pre while");
+		while(1)
+		{
+		//printf("in while");
+		//tx_wr_pos += sprintf(tx_wr_pos,
+							 // "--> Nios II Penecommand over TCP.\n");
+
+		send(conn.fd, mesg, msg_len, 0);
+		//OSTimeDlyHMSM(0,0,0,1);
+		if ((conn.fd != -1) && FD_ISSET(conn.fd, &readfds))
+			{
+			SSS_handle_receive(&conn);
+			printf("handle received\n");
+			}
+		}
+
+
+
+  	}
+	while (1)
+	{
+		tx_wr_pos += sprintf(tx_wr_pos,
+							  "--> Nios II Penecommand.\n");
+
+		 send(conn.fd, tx_buf, tx_wr_pos - tx_buf, 0);
+		 OSTimeDlyHMSM(0,0,1,0);
+	}
+
+	while(1)
+	{
+		printf("pene!\n");
+		OSTimeDlyHMSM(0,0,5,0);
+	}
+
 }
 
 
