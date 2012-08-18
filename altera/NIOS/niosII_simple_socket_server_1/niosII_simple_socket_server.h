@@ -89,6 +89,7 @@ void SSSCreateTasks();
 #define SSS_INITIAL_TASK_PRIORITY               5
 #define SSS_MONITOR_PHY_TASK_PRIORITY           9
 #define SSS_NIOS_II_SIMPLE_SOCKET_SERVER_TASK_PRIORITY	10
+#define SSS_MONITOR_PENE_TASK_PRIORITY           6
 
 /*
  * The IP, gateway, and subnet mask address below are used as a last resort
@@ -104,23 +105,24 @@ void SSSCreateTasks();
  */
 #define IPADDR0   192
 #define IPADDR1   168
-#define IPADDR2   1
+#define IPADDR2   0
 #define IPADDR3   30
 
 #define GWADDR0   192
 #define GWADDR1   168
-#define GWADDR2   1
+#define GWADDR2   0
 #define GWADDR3   1
 
 #define MSKADDR0  255
 #define MSKADDR1  255
-#define MSKADDR2  255
+#define MSKADDR2  0
 #define MSKADDR3  0
 
 /*
  * IP Port(s) for our application(s)
  */
 #define SSS_PORT 30
+#define PENE_PORT 69
 
 /* Definition of Task Stack size for tasks not using Nichestack */
 #define   TASK_STACKSIZE       32768
@@ -128,8 +130,8 @@ void SSSCreateTasks();
 /*
  * TX & RX buffer sizes for all socket sends & receives in our SSS app
  */
-#define SSS_RX_BUF_SIZE  1500
-#define SSS_TX_BUF_SIZE  1500
+#define SSS_RX_BUF_SIZE  5000
+#define SSS_TX_BUF_SIZE  5000
 
 /*
  * The maximum time that an ethernet cable can be "down" before sending a disconnect msg.

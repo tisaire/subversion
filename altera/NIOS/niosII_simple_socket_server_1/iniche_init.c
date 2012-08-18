@@ -129,6 +129,17 @@ struct inet_taskinfo sssphytask = {
       APP_STACK_SIZE,
 };
 
+TK_OBJECT(to_ssspenetask);
+TK_ENTRY(SSSNiosIISimpleSocketServerPeneTask);
+
+struct inet_taskinfo ssspenetask = {
+      &to_ssspenetask,
+      "monitor_pene",
+      SSSNiosIISimpleSocketServerPeneTask,
+      SSS_MONITOR_PENE_TASK_PRIORITY,
+      APP_STACK_SIZE,
+};
+
 
 
 /* Callback function for when the Interniche DHCP subsystem acquires
@@ -471,6 +482,8 @@ void SSSInitialTask(void *task_data)
 
   /* Create the main Nios II Simple socket server task. */
   TK_NEWTASK(&ssstask);
+
+  TK_NEWTASK(&ssspenetask);
 
   /*create os data structures */
   SSSCreateOSDataStructs();
