@@ -417,7 +417,9 @@ void SSSMonitorPhyTask(void *task_data)
   * Force re-acquisition of existing IP Address.
   * If that fails, the Iniche DHCP state machine should fall through to DHCP discovery.
   */
+#ifdef DHCP_CLIENT
         dhc_set_state( 0, DHCS_INITREBOOT );
+#endif
       }
 /*
  * Reset the disconnect counter.
@@ -443,7 +445,10 @@ void SSSInitialTask(void *task_data)
  * Register new DHCP "IP attained" callback function.
  * If DHCP is acquired, ws_ipset will be called instead of dhc_main_ipset().
  */
+#ifdef DHCP_CLIENT
   dhc_set_callback( 0, ws_ipset );
+#endif
+
 
   /*
    * Initialize Altera NicheStack TCP/IP Stack - Nios II Edition specific code.
@@ -481,7 +486,7 @@ void SSSInitialTask(void *task_data)
   TK_NEWTASK(&sssphytask);
 
   /* Create the main Nios II Simple socket server task. */
-  TK_NEWTASK(&ssstask);
+  //TK_NEWTASK(&ssstask);
 
   TK_NEWTASK(&ssspenetask);
 
