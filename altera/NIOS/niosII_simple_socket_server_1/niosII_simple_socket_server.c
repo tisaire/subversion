@@ -228,7 +228,7 @@ void SSS_handle_accept(int listen_socket, SSSConn* conn)
      else
      {
         (conn)->fd = socket;
-        SSS_send_menu(conn);
+        //SSS_send_menu(conn);
         printf("[SSS_handle_accept] accepted connection request from %s\n",
                inet_ntoa(incoming_addr.sin_addr));
      }
@@ -520,60 +520,61 @@ void SSSNiosIISimpleSocketServerPeneTask(void)
 	fd_set readfds;
 	char *mesg;
 	int msg_len;
+	short numeroprueba[700]={69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69,-69,69,-69,69,69,-69,69,-69,69};
+	//sinus 1Hz mostrejat a 100Hz, 500 mostres, multiplicat per 32767
+	short sin1Hzm100Hz[500]={0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,-1,19259,31163,31163,19259,0,-19260,-31164,-31164,-19260,0,19259,31163,31163,19259,-1,-19260,-31164,-31164,-19260};
+	short sin1Hzm200Hz[500]={0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,-1,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164,0,31163,19259,-19260,-31164};
+	short tmp;
+	char i;
 
+	/*
+	 * Sockets primer...
+	 * The socket() call creates an endpoint for TCP of UDP communication. It
+	 * returns a descriptor (similar to a file descriptor) that we call fd_listen,
+	 * or, "the socket we're listening on for connection requests" in our SSS
+	 * server example.
+	 */
+	if ((fd_listen = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+	{
+		alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Socket creation failed");
+	}
 
+	/*
+	 * Sockets primer, continued...
+	 * Calling bind() associates a socket created with socket() to a particular IP
+	 * port and incoming address. In this case we're binding to SSS_PORT and to
+	 * INADDR_ANY address (allowing anyone to connect to us. Bind may fail for
+	 * various reasons, but the most common is that some other socket is bound to
+	 * the port we're requesting.
+	 */
+	addr.sin_family = AF_INET;
+	addr.sin_port = htons(PENE_PORT);
+	addr.sin_addr.s_addr = INADDR_ANY;
 
-	INT8U tx_buf[SSS_TX_BUF_SIZE];
-	INT8U *tx_wr_pos = tx_buf;
+	if ((bind(fd_listen,(struct sockaddr *)&addr,sizeof(addr))) < 0)
+	{
+		alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Bind failed");
+	}
 
-  /*
-   * Sockets primer...
-   * The socket() call creates an endpoint for TCP of UDP communication. It
-   * returns a descriptor (similar to a file descriptor) that we call fd_listen,
-   * or, "the socket we're listening on for connection requests" in our SSS
-   * server example.
-   */
-  if ((fd_listen = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-  {
-	alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Socket creation failed");
-  }
+	/*
+	 * Sockets primer, continued...
+	 * The listen socket is a socket which is waiting for incoming connections.
+	 * This call to listen will block (i.e. not return) until someone tries to
+	 * connect to this port.
+	 */
+	if ((listen(fd_listen,1)) < 0)
+	{
+		alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Listen failed");
+	}
 
-  /*
-   * Sockets primer, continued...
-   * Calling bind() associates a socket created with socket() to a particular IP
-   * port and incoming address. In this case we're binding to SSS_PORT and to
-   * INADDR_ANY address (allowing anyone to connect to us. Bind may fail for
-   * various reasons, but the most common is that some other socket is bound to
-   * the port we're requesting.
-   */
-  addr.sin_family = AF_INET;
-  addr.sin_port = htons(PENE_PORT);
-  addr.sin_addr.s_addr = INADDR_ANY;
+	/* At this point we have successfully created a socket which is listening
+	 * on SSS_PORT for connection requests from any remote address.
+	 */
+	SSS_reset_connection(&conn);
+	printf("[PENE_task] Nios II Simple Socket Server listening on port %d\n", PENE_PORT);
 
-  if ((bind(fd_listen,(struct sockaddr *)&addr,sizeof(addr))) < 0)
-  {
-	alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Bind failed");
-  }
-
-  /*
-   * Sockets primer, continued...
-   * The listen socket is a socket which is waiting for incoming connections.
-   * This call to listen will block (i.e. not return) until someone tries to
-   * connect to this port.
-   */
-  if ((listen(fd_listen,1)) < 0)
-  {
-	alt_NetworkErrorHandler(EXPANDED_DIAGNOSIS_CODE,"[PENE_task] Listen failed");
-  }
-
-  /* At this point we have successfully created a socket which is listening
-   * on SSS_PORT for connection requests from any remote address.
-   */
-  SSS_reset_connection(&conn);
-  printf("[PENE_task] Nios II Simple Socket Server listening on port %d\n", PENE_PORT);
-
-  while(1)
-  {
+	while(1)
+	{
 		/*
 		 * For those not familiar with sockets programming...
 		 * The select() call below basically tells the TCPIP stack to return
@@ -598,11 +599,11 @@ void SSSNiosIISimpleSocketServerPeneTask(void)
 
 		if (conn.fd != -1)
 		{
-		  FD_SET(conn.fd, &readfds);
-		  if (max_socket <= conn.fd)
-		  {
-			max_socket = conn.fd+1;
-		  }
+			FD_SET(conn.fd, &readfds);
+			if (max_socket <= conn.fd)
+			{
+				max_socket = conn.fd+1;
+			}
 		}
 		printf("PENE pre select\n");
 		select(max_socket, &readfds, NULL, NULL, NULL);
@@ -616,8 +617,8 @@ void SSSNiosIISimpleSocketServerPeneTask(void)
 		 */
 		if (FD_ISSET(fd_listen, &readfds))
 		{
-		  SSS_handle_accept(fd_listen, &conn);
-		  printf("handle accepted\n");
+			SSS_handle_accept(fd_listen, &conn);
+			printf("handle accepted\n");
 		}
 		/*
 		 * If SSS_handle_accept() accepts the connection, it creates *another*
@@ -629,53 +630,68 @@ void SSSNiosIISimpleSocketServerPeneTask(void)
 		 */
 		else
 		{
-		  if ((conn.fd != -1) && FD_ISSET(conn.fd, &readfds))
-		  {
-			SSS_handle_receive(&conn);
-			printf("handle received\n");
-		  }
+			if ((conn.fd != -1) && FD_ISSET(conn.fd, &readfds))
+			{
+				SSS_handle_receive(&conn);
+				printf("handle received\n");
+			}
 		}
 		//OSTimeDlyHMSM(0,0,1,0);
+		//numeroprueba=69;
 
 		//Generate mesg
 		mesg="pene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\npene enviado, el c da asco y las FPGA'S aún más\n";
 		//mesg=strcat(mesg,mesg);
 		msg_len=strlen(mesg);
-
+		i=0;
 		printf("pre while");
 		while(1)
 		{
-		//printf("in while");
-		//tx_wr_pos += sprintf(tx_wr_pos,
-							 // "--> Nios II Penecommand over TCP.\n");
-
-		send(conn.fd, mesg, msg_len, 0);
-		//OSTimeDlyHMSM(0,0,0,1);
-		if ((conn.fd != -1) && FD_ISSET(conn.fd, &readfds))
+			//printf("in while");
+			//tx_wr_pos += sprintf(tx_wr_pos,
+			// "--> Nios II Penecommand over TCP.\n");
+			if (i)
 			{
-			SSS_handle_receive(&conn);
-			printf("handle received\n");
+				tmp=sizeof(sin1Hzm100Hz);
+				if (send(conn.fd, &tmp, sizeof(short), 0)==-1)
+				{
+					break;
+				}
+				if(send(conn.fd, sin1Hzm100Hz, tmp, 0)==-1)
+				{
+					break;
+				}
+				//OSTimeDlyHMSM(0,0,1,0);
+				if ((conn.fd != -1) && FD_ISSET(conn.fd, &readfds))
+				{
+					SSS_handle_receive(&conn);
+					printf("handle received\n");
+				}
+			}else
+			{
+				tmp=sizeof(sin1Hzm200Hz);
+				if (send(conn.fd, &tmp, sizeof(short), 0)==-1)
+				{
+					break;
+				}
+				if(send(conn.fd, sin1Hzm200Hz, tmp, 0)==-1)
+				{
+					break;
+				}
+				//OSTimeDlyHMSM(0,0,1,0);
+				if ((conn.fd != -1) && FD_ISSET(conn.fd, &readfds))
+				{
+					SSS_handle_receive(&conn);
+					printf("handle received\n");
+				}
 			}
+			i=!i;
 		}
+		close(conn.fd);
+		SSS_reset_connection(&conn);
 
 
-
-  	}
-	while (1)
-	{
-		tx_wr_pos += sprintf(tx_wr_pos,
-							  "--> Nios II Penecommand.\n");
-
-		 send(conn.fd, tx_buf, tx_wr_pos - tx_buf, 0);
-		 OSTimeDlyHMSM(0,0,1,0);
 	}
-
-	while(1)
-	{
-		printf("pene!\n");
-		OSTimeDlyHMSM(0,0,5,0);
-	}
-
 }
 
 
