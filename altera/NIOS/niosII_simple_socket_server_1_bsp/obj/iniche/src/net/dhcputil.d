@@ -5,7 +5,7 @@ obj/iniche/src/net/dhcputil.o: iniche/src/net/dhcputil.c \
   HAL/inc/sys/alt_alarm.h HAL/inc/sys/alt_llist.h \
   HAL/inc/priv/alt_alarm.h HAL/inc/alt_types.h system.h \
   UCOSII/inc/ucos_ii.h UCOSII/inc/os_cfg.h HAL/inc/os_cpu.h \
-  iniche/src/h/tk_crnos.h iniche/src/h/libport.h iniche/src/h/dhcpclnt.h
+  iniche/src/h/tk_crnos.h iniche/src/h/libport.h
 
 iniche/src/h/nios2/ipport.h:
 
@@ -48,5 +48,3 @@ HAL/inc/os_cpu.h:
 iniche/src/h/tk_crnos.h:
 
 iniche/src/h/libport.h:
-
-iniche/src/h/dhcpclnt.h:

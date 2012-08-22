@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>ucosii</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>06-ago-2012 22:38:29</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1344285509399</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>21-ago-2012 0:46:21</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1345502781694</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\altera\DE2_115_WEB_SERVER_RGMII_ENET1\software\niosII_simple_socket_server_1_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\DE2_115_SOPC.sopcinfo</SopcDesignFile>
@@ -1694,7 +1694,7 @@
                 <SettingName>altera_iniche.enable_dhcp_client</SettingName>
                 <Identifier>DHCP_CLIENT</Identifier>
                 <Type>BooleanDefineOnly</Type>
-                <Value>true</Value>
+                <Value>false</Value>
                 <DefaultValue>true</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Use DHCP to automatically assign IP address</Description>
@@ -1730,7 +1730,7 @@
                 <SettingName>altera_iniche.enable_tcp_zerocopy</SettingName>
                 <Identifier>TCP_ZEROCOPY</Identifier>
                 <Type>BooleanDefineOnly</Type>
-                <Value>false</Value>
+                <Value>true</Value>
                 <DefaultValue>false</DefaultValue>
                 <DestinationFile>system_h_define</DestinationFile>
                 <Description>Use TCP zero-copy</Description>

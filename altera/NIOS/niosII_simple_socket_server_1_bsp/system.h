@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu' in SOPC Builder design 'DE2_115_SOPC'
  * SOPC Builder design path: ../../DE2_115_SOPC.sopcinfo
  *
- * Generated: Mon Aug 06 22:35:41 CEST 2012
+ * Generated: Tue Aug 21 00:46:07 CEST 2012
  */
 
 /*
@@ -187,10 +187,10 @@
  *
  */
 
-#define DHCP_CLIENT
 #define INCLUDE_TCP
 #define INICHE_DEFAULT_IF "NOT_USED"
 #define IP_FRAGMENTS
+#define TCP_ZEROCOPY
 
 
 /*
