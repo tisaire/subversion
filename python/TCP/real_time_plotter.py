@@ -10,8 +10,9 @@ import socket
 import sys
 import struct
 import numpy
+import serial
 
-
+source='serial' #'TCP'
 
 xAchse=pylab.arange(0,300,1)
 yAchse=pylab.array([0]*300)
@@ -86,17 +87,29 @@ class TCP():
                 #print "final size:",tmp
             else:
                 print "size bigger than expected"
-
-    
-            
-            
-        
+  
         except:
             print "Unexpected error:", sys.exc_info()
             print sys.getsizeof(rcv)
             print "bye"
             self.s.close
+class ser():
+    def __init__(self):
+        self.s=serial.Serial('/dev/ttyUSB1')
+    def connect(self):
+        self.s.baudrate=115200
+        print self.s,"Connected!"
+    def get_values(self):
+        global values
+        try:
+            a=self.s.write('hola')
+            print a
+            
+        except:
+            print "Unexpected error:", sys.exc_info()
 
+            print "bye"
+            self.s.clos
 
 
 def SinwaveformGenerator(arg):
@@ -123,7 +136,11 @@ def RealtimePloter():
     ax2.axis([CurrentXAxis.min(),CurrentXAxis.max(),-400,400])
     fig.canvas.draw()
     #manager.show()
-tcp_conn=TCP()
+if source =='TCP':
+    tcp_conn=TCP()
+else:
+    tcp_conn=ser()
+
 tcp_conn.connect()
 timer = fig.canvas.new_timer(interval=20)
 timer.add_callback(RealtimePloter)
