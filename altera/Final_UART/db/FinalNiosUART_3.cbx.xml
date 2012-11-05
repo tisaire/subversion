@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="FinalNiosUART_3">
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|FifoNM:U3|dcfifo:dcfifo_component" CBX_FILE_NAME="dcfifo_2pf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_jtag_uart:jtag_uart|Nios1_jtag_uart_scfifo_w:the_Nios1_jtag_uart_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_bht_module:Nios1_nios2_qsys_bht|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_62h1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_dc_data_module:Nios1_nios2_qsys_dc_data|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_kdf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_dc_tag_module:Nios1_nios2_qsys_dc_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_kmg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_dc_victim_module:Nios1_nios2_qsys_dc_victim|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_r3d1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_nios2_oci:the_Nios1_nios2_qsys_nios2_oci|Nios1_nios2_qsys_nios2_oci_im:the_Nios1_nios2_qsys_nios2_oci_im|Nios1_nios2_qsys_traceram_lpm_dram_bdp_component_module:Nios1_nios2_qsys_traceram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_0a02.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_nios2_oci:the_Nios1_nios2_qsys_nios2_oci|Nios1_nios2_qsys_nios2_ocimem:the_Nios1_nios2_qsys_nios2_ocimem|Nios1_nios2_qsys_ociram_lpm_dram_bdp_component_module:Nios1_nios2_qsys_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_ae82.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_register_bank_a_module:Nios1_nios2_qsys_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_6gg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|lpm_add_sub:Add17" CBX_FILE_NAME="add_sub_qvi.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|pll1:PllDeMierda|altpll:altpll_component" CBX_FILE_NAME="pll1_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_jtag_uart:jtag_uart|Nios1_jtag_uart_scfifo_r:the_Nios1_jtag_uart_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_jr21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_mult_cell:the_Nios1_nios2_qsys_mult_cell|altmult_add:the_altmult_add_part_1" CBX_FILE_NAME="mult_add_mgr2.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|altsyncram:memory_rtl_0" CBX_FILE_NAME="altsyncram_q8j1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_ic_data_module:Nios1_nios2_qsys_ic_data|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_cjd1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_ic_tag_module:Nios1_nios2_qsys_ic_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_heh1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_mult_cell:the_Nios1_nios2_qsys_mult_cell|altmult_add:the_altmult_add_part_2" CBX_FILE_NAME="mult_add_ogr2.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_nios2_qsys:nios2_qsys|Nios1_nios2_qsys_register_bank_b_module:Nios1_nios2_qsys_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_7gg1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|FinalNiosUART_3|Nios1:nioss|Nios1_onchip_memory:onchip_memory|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_anc1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Oct 30 16:17:54 2012
+Quartus II 32-bit Version : 11.1 Build 259 01/25/2012 SP 2 SJ Web Edition
+Revision Name : FinalNiosUART_3
+Top-level Entity Name : FinalNiosUART_3
+Family : Cyclone IV E
+Total logic elements : 4,437
+    Total combinational functions : 3,622
+    Dedicated logic registers : 2,597
+Total registers : 2597
+Total pins : 181
+Total virtual pins : 0
+Total memory bits : 1,104,519
+Embedded Multiplier 9-bit elements : 4
+Total PLLs : 1
