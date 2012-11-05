@@ -1,0 +1,20 @@
+
+**** Build of configuration Nios II for project Soft_v10 ****
+
+make all 
+Info: Building ../Soft_v10_bsp/
+make --no-print-directory -C ../Soft_v10_bsp/
+[BSP build complete]
+Info: Compiling hello_world.c to obj/default/hello_world.o
+nios2-elf-gcc -xc -MP -MMD -c -I../Soft_v10_bsp//HAL/inc -I../Soft_v10_bsp/ -I../Soft_v10_bsp//drivers/inc  -DSYSTEM_BUS_WIDTH=32 -pipe -D__hal__ -DALT_NO_INSTRUCTION_EMULATION -DALT_SINGLE_THREADED    -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o obj/default/hello_world.o hello_world.c
+hello_world.c: In function 'main':
+hello_world.c:19: warning: unused variable 'delay'
+hello_world.c:17: warning: unused variable 'c'
+Info: Linking Soft_v10.elf
+nios2-elf-g++  -T'../Soft_v10_bsp//linker.x' -msys-crt0='../Soft_v10_bsp//obj/HAL/src/crt0.o' -msys-lib=hal_bsp -L../Soft_v10_bsp/   -Wl,-Map=Soft_v10.map   -O0 -g -Wall   -EL -mno-hw-div -mhw-mul -mno-hw-mulx  -o Soft_v10.elf obj/default/hello_world.o -lm 
+nios2-elf-insert Soft_v10.elf --thread_model hal --cpu_name nios2_qsys --qsys true --simulation_enabled false --id 0 --sidp 0x410f8 --timestamp 1351609869 --stderr_dev jtag_uart --stdin_dev jtag_uart --stdout_dev jtag_uart --sopc_system_name Nios1 --quartus_project_dir "C:/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3" --jdi C:/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/FinalNiosUART_3.jdi
+Info: (Soft_v10.elf) 67 KBytes program size (code + initialized data).
+Info:                49 KBytes free for stack + heap.
+Info: Creating Soft_v10.objdump
+nios2-elf-objdump --disassemble --syms --all-header --source Soft_v10.elf >Soft_v10.objdump
+[Soft_v10 build complete]

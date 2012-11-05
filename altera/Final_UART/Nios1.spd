@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="Nios1/simulation/submodules/Nios1_irq_mapper.vho"
+   type="VHDL"
+   library="irq_mapper" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_rsp_xbar_mux_001.vho"
+   type="VHDL"
+   library="rsp_xbar_mux_001" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_rsp_xbar_mux.vho"
+   type="VHDL"
+   library="rsp_xbar_mux" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_rsp_xbar_demux_002.vho"
+   type="VHDL"
+   library="rsp_xbar_demux_002" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_rsp_xbar_demux.vho"
+   type="VHDL"
+   library="rsp_xbar_demux" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_cmd_xbar_mux.vho"
+   type="VHDL"
+   library="cmd_xbar_mux" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_cmd_xbar_demux_001.vho"
+   type="VHDL"
+   library="cmd_xbar_demux_001" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_cmd_xbar_demux.vho"
+   type="VHDL"
+   library="cmd_xbar_demux" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_rst_controller.vho"
+   type="VHDL"
+   library="rst_controller" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_limiter.vho"
+   type="VHDL"
+   library="limiter" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_id_router_002.vho"
+   type="VHDL"
+   library="id_router_002" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_id_router.vho"
+   type="VHDL"
+   library="id_router" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_addr_router_001.vho"
+   type="VHDL"
+   library="addr_router_001" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_addr_router.vho"
+   type="VHDL"
+   library="addr_router" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_RdyData_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="pio_RdyData_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_timer_0_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="timer_0_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_onchip_memory_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="onchip_memory_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_uart_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="uart_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_Data_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="pio_Data_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_Button_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="pio_Button_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_jtag_uart_avalon_jtag_slave_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="jtag_uart_avalon_jtag_slave_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_SW_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="pio_SW_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_instruction_master_translator_avalon_universal_master_0_agent.vho"
+   type="VHDL"
+   library="nios2_qsys_instruction_master_translator_avalon_universal_master_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_jtag_debug_module_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="nios2_qsys_jtag_debug_module_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_lcd_control_slave_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="lcd_control_slave_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_data_master_translator_avalon_universal_master_0_agent.vho"
+   type="VHDL"
+   library="nios2_qsys_data_master_translator_avalon_universal_master_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_DataRead_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="pio_DataRead_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_sysid_qsys_control_slave_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="sysid_qsys_control_slave_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_LEDR_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="pio_LEDR_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_LEDG_s1_translator_avalon_universal_slave_0_agent_rsp_fifo.vho"
+   type="VHDL"
+   library="pio_LEDG_s1_translator_avalon_universal_slave_0_agent_rsp_fifo" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_LEDG_s1_translator_avalon_universal_slave_0_agent.vho"
+   type="VHDL"
+   library="pio_LEDG_s1_translator_avalon_universal_slave_0_agent" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_timer_0_s1_translator.vho"
+   type="VHDL"
+   library="timer_0_s1_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_uart_s1_translator.vho"
+   type="VHDL"
+   library="uart_s1_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_lcd_control_slave_translator.vho"
+   type="VHDL"
+   library="lcd_control_slave_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_Button_s1_translator.vho"
+   type="VHDL"
+   library="pio_Button_s1_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_SW_s1_translator.vho"
+   type="VHDL"
+   library="pio_SW_s1_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_LEDG_s1_translator.vho"
+   type="VHDL"
+   library="pio_LEDG_s1_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_sysid_qsys_control_slave_translator.vho"
+   type="VHDL"
+   library="sysid_qsys_control_slave_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_jtag_uart_avalon_jtag_slave_translator.vho"
+   type="VHDL"
+   library="jtag_uart_avalon_jtag_slave_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_onchip_memory_s1_translator.vho"
+   type="VHDL"
+   library="onchip_memory_s1_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_jtag_debug_module_translator.vho"
+   type="VHDL"
+   library="nios2_qsys_jtag_debug_module_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_data_master_translator.vho"
+   type="VHDL"
+   library="nios2_qsys_data_master_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_instruction_master_translator.vho"
+   type="VHDL"
+   library="nios2_qsys_instruction_master_translator" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_DataRead.vhd"
+   type="VHDL"
+   library="pio_DataRead" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_RdyData.vhd"
+   type="VHDL"
+   library="pio_RdyData" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_Data.vhd"
+   type="VHDL"
+   library="pio_Data" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_timer_0.vhd"
+   type="VHDL"
+   library="timer_0" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_uart.vhd"
+   type="VHDL"
+   library="uart" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_uart_input_data_mutex.dat"
+   type="OTHER"
+   library="uart" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_uart_input_data_stream.dat"
+   type="OTHER"
+   library="uart" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_uart_log_module.txt"
+   type="OTHER"
+   library="uart" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_lcd.vhd"
+   type="VHDL"
+   library="lcd" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_Button.vhd"
+   type="VHDL"
+   library="pio_Button" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_SW.vhd"
+   type="VHDL"
+   library="pio_SW" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_LEDR.vhd"
+   type="VHDL"
+   library="pio_LEDR" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_pio_LEDG.vhd"
+   type="VHDL"
+   library="pio_LEDG" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_sysid_qsys.vho"
+   type="VHDL"
+   library="sysid_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_jtag_uart.vhd"
+   type="VHDL"
+   library="jtag_uart" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_jtag_uart_input_mutex.dat"
+   type="OTHER"
+   library="jtag_uart" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_jtag_uart_input_stream.dat"
+   type="OTHER"
+   library="jtag_uart" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_jtag_uart_output_stream.dat"
+   type="OTHER"
+   library="jtag_uart" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_onchip_memory.hex"
+   type="HEX"
+   library="onchip_memory" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_onchip_memory.vhd"
+   type="VHDL"
+   library="onchip_memory" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys.do"
+   type="OTHER"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys.ocp"
+   type="OTHER"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys.sdc"
+   type="SDC"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys.vhd"
+   type="VHDL_ENCRYPT"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys.vho"
+   type="VHDL"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_bht_ram.dat"
+   type="DAT"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_bht_ram.hex"
+   type="HEX"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_bht_ram.mif"
+   type="MIF"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_dc_tag_ram.dat"
+   type="DAT"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_dc_tag_ram.hex"
+   type="HEX"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_dc_tag_ram.mif"
+   type="MIF"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_ic_tag_ram.dat"
+   type="DAT"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_ic_tag_ram.hex"
+   type="HEX"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_ic_tag_ram.mif"
+   type="MIF"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_jtag_debug_module_sysclk.vhd"
+   type="VHDL"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_jtag_debug_module_tck.vhd"
+   type="VHDL"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_jtag_debug_module_wrapper.vhd"
+   type="VHDL"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_mult_cell.vhd"
+   type="VHDL"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_ociram_default_contents.dat"
+   type="DAT"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_ociram_default_contents.hex"
+   type="HEX"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_ociram_default_contents.mif"
+   type="MIF"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_oci_test_bench.vhd"
+   type="VHDL"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_rf_ram_a.dat"
+   type="DAT"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_rf_ram_a.hex"
+   type="HEX"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_rf_ram_a.mif"
+   type="MIF"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_rf_ram_b.dat"
+   type="DAT"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_rf_ram_b.hex"
+   type="HEX"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_rf_ram_b.mif"
+   type="MIF"
+   library="nios2_qsys" />
+ <file
+   path="Nios1/simulation/submodules/Nios1_nios2_qsys_test_bench.vhd"
+   type="VHDL"
+   library="nios2_qsys" />
+ <file path="Nios1/simulation/Nios1.vhd" type="VHDL" />
+ <topLevel name="Nios1" />
+ <deviceFamily name="cycloneive" />
+ <modelMap controllerPath="Nios1.onchip_memory" modelPath="Nios1.onchip_memory" />
+</simPackage>

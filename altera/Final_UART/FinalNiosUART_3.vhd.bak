@@ -1,0 +1,436 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+
+entity FinalNiosUART_2 is
+	port
+	(
+		CLOCK_50   : in std_logic;
+		LEDG       : out std_logic_vector(7 downto 0);
+		LEDR       : out std_logic_vector(17 downto 0);
+		SW         : in std_logic_vector(17 downto 0);
+		HEX0		  : out std_logic_vector(6 downto 0);
+		HEX1		  : out std_logic_vector(6 downto 0);
+		HEX2		  : out std_logic_vector(6 downto 0);
+		--LCD
+		LCD_DATA   : inout std_logic_vector(7 downto 0);
+		LCD_EN     : out std_logic;
+		LCD_RS     : out std_logic;
+		LCD_RW     : out std_logic;
+		--UART
+		KEY        : in std_logic_vector(3 downto 0);
+		UART_RXD   : in std_logic;
+		UART_TXD   : out std_logic;
+		--RAM
+		SRAM_ADDR  : OUT std_logic_vector(19 downto 0);
+      SRAM_WE_N  : OUT std_logic;
+      SRAM_CE_N  : OUT std_logic;
+      SRAM_OE_N  : OUT std_logic;
+      SRAM_DQ    : INOUT std_logic_vector(15 downto 0);
+      SRAM_LB_N  : OUT std_logic;
+      SRAM_UB_N  : OUT std_logic
+	);
+	
+end FinalNiosUART_2;
+
+architecture bh of FinalNiosUART_2 is
+
+	
+   component Nios_1 is
+        port (
+            clk_clk           : in    std_logic                     := 'X';             -- clk
+            reset_reset_n     : in    std_logic                     := 'X';             -- reset_n
+            pio_ledg_export   : out   std_logic_vector(7 downto 0);                     -- export
+            pio_ledr_export   : out   std_logic_vector(17 downto 0);                    -- export
+            pio_sw_export     : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
+            pio_button_export : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
+            lcd_external_data : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- data
+            lcd_external_E    : out   std_logic;                                        -- E
+            lcd_external_RS   : out   std_logic;                                        -- RS
+            lcd_external_RW   : out   std_logic;                                        -- RW
+            uart_external_rxd : in    std_logic:= 'X';            							 -- rxd
+            uart_external_txd : out   std_logic;                                        -- txd
+				pio_data_export     : in    std_logic_vector(11 downto 0) := (others => 'X'); -- export
+            pio_rdydata_export  : in    std_logic                     := 'X';             -- export
+            pio_dataread_export : out   std_logic_vector(1 downto 0)     						-- export
+           
+        );
+    end component Nios_1;
+	 
+	
+	 
+	component Fifo_1   -- fifo 12x128 
+	port 
+	(
+		data		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
+		rdclk		: IN STD_LOGIC ;
+		rdreq		: IN STD_LOGIC ;
+		wrclk		: IN STD_LOGIC ;
+		wrreq		: IN STD_LOGIC ;
+		q			: OUT STD_LOGIC_VECTOR (11 DOWNTO 0);
+		rdempty	: OUT STD_LOGIC ;
+		wrfull	: OUT STD_LOGIC 
+	);
+	end component;
+	
+	component GeneratorPD -- generador de descargas parciales
+	port
+	(
+		  clk :			 in std_logic;  
+        InPD  :  	 	 in std_logic;    
+        DataOut : 	 out std_logic_vector(11 downto 0)   --output data registered
+	);
+	end component;
+	
+	component BufferDetector_1 -- buffer de 8 posiciones con detector de señal
+	port
+	(
+		  clk : 			 in std_logic;  
+        EnR : 			 in std_logic;   
+        DataOut :		 out std_logic_vector(11 downto 0);    --output data  
+        DataIn :		 in std_logic_vector (11 downto 0);     --input data  
+        Trigger :		 out std_logic
+	);
+	end component;
+	
+	
+	component DriverSRAM
+	port
+	(
+		clk:                        in std_logic;
+		reset:                      in std_logic;
+		mem:                        in std_logic;
+		rw:                         in std_logic;
+		addr:                       in std_logic_vector(19 downto 0);
+		data_f2s:                   in std_logic_vector(11 downto 0);
+		ready:                      out std_logic;
+		data_s2f_r, data_s2f_ur:    out std_logic_vector(11 downto 0);
+		ad:                         out std_logic_vector(19 downto 0);
+		we_n, oe_n:                 out std_logic;
+		dio:                        inout std_logic_vector(11 downto 0);
+		ce_n:                       out std_logic;
+		lb_n:								 out std_logic;
+		ub_n:							  	 out std_logic;
+		LEDG:               		    OUT std_logic_vector(4 downto 0) 
+	);
+	
+	end component;
+
+			 
+			 signal FIFOClkNIOS:			std_logic;
+			 signal FIFOEmptyNIOS:		std_logic;
+			 signal FIFOFullNIOS:		std_logic;
+			 signal FIFOWriteNIOS:		std_logic;
+			 signal DataFIFOPIO:			std_logic_vector(11 downto 0);
+			 signal FIFOControlNIOS:	std_logic_vector(1 downto 0);
+			 
+	signal LEDRfake	: std_logic_vector(17 downto 0);
+	signal LEDGfake	: std_logic_vector(7 downto 0);	
+			 
+	signal counter:		std_logic_vector(25 downto 0) :="00000000000000000000000000";
+   signal clk:         	std_logic   :='0';
+	
+	signal aux:				std_logic_vector(11 downto 0) :="000000000000";
+	
+	signal DataGen2Buff:		std_logic_vector(11 downto 0);
+	signal DataBuff2FIFO:	std_logic_vector(11 downto 0);
+	signal DataFIFO2SRAM:	std_logic_vector(11 downto 0);
+	signal DataSRAM2Fpio:	std_logic_vector(11 downto 0);
+	signal DataFpio2Nios:	std_logic_vector(11 downto 0); 
+	
+	signal AUX1:					std_logic_vector(11 downto 0);
+	signal AUX2:					std_logic_vector(11 downto 0);
+	signal AUX3:					std_logic_vector(3 downto 0);
+	
+	signal Trigger_reg:				std_logic := '0';
+	signal Trigger:					std_logic := '0';
+	signal Counter_Long:				std_logic_vector(3 downto 0):="0000";
+	signal Counter_DP_FIFO:			std_logic_vector(2 downto 0):="000";
+	signal Counter_DP_FIFO_Up:		std_logic := '0';
+	signal Counter_DP_FIFO_Down:	std_logic := '0';
+	signal ReadBuffer:				std_logic;
+	signal WriteFIFO:					std_logic;
+	signal ReadFIFO:					std_logic;
+	signal Counter_Full:				std_logic := '0';
+	signal DP_readed:					std_logic;
+	signal FIFO1empty:				std_logic;
+	signal FIFO2empty:				std_logic;
+	signal Reset:						std_logic;
+	signal Emen:						std_logic;
+	signal Rdymen:						std_logic;
+	signal Addr2W:						std_logic_vector(19 downto 0):="00000000000000000000";
+	signal Addr2R:						std_logic_vector(19 downto 0):="00000000000000000000";
+	signal Addr:						std_logic_vector(19 downto 0);
+	signal RW_RAM:						std_logic;
+	signal WriteFIFOpio:				std_logic;
+	signal ReadFIFOpio:				std_logic;
+	signal FIFO1full:					std_logic;
+	signal FIFO2full:					std_logic;
+	 
+begin
+
+	HEX0(0) <= not clk;
+	
+	U1 : GeneratorPD	-- fifo antes de la SRAM 
+	port map  (
+		  clk 		=> clk,
+        InPD 		=> not KEY(3),
+        DataOut	=> DataGen2Buff
+	);
+		 
+   --El buff siempre esta cogiendo valores
+	
+	U2 : BufferDetector_1
+	port map (
+		  clk 		=> clk,
+		  EnR 		=> ReadBuffer,
+        DataOut	=> DataBuff2FIFO,
+        DataIn 	=> DataGen2Buff,
+        Trigger	=> Trigger
+	);
+	
+	
+	 ReadBuffer	<=Trigger_reg;
+	 WriteFIFO	<=Trigger_reg;
+	
+	 HEX0(1) <=  not Trigger;
+	
+    HEX0(2) <=  not Trigger_reg;
+	
+	HEX0(3) <= '1';
+	HEX0(4) <= '1';
+	HEX0(5) <= '1';
+	HEX0(6) <= '1';
+	
+	
+	-- DP_readed <= '0' when KEY(2)= '0' else '1';
+	
+	 Reg_Trigger: process(clk,Counter_Full) -- Biestable raro que retiene el Trigger!
+	 begin
+	 
+		if clk'event and clk = '1' then 
+			if Counter_Full = '1' then
+				Trigger_reg <= '0';
+			else
+				Trigger_reg <= Trigger OR Trigger_reg;  -- La gran patillada!
+			end if;
+		end if;
+		
+	 end process;
+	 
+	 Counter_Full <= '1' when Counter_long = "1111" else '0';
+	 
+	 Contador_Trigger: process(clk) -- Contador de logitud de descarga
+	 begin
+		 if (clk'event and clk = '1') then
+			if (Trigger_reg = '1') then
+				Counter_long <= Counter_long + '1';
+			end if;
+		end if;
+	 end process;
+	
+	
+	U3 : Fifo_1		-- fifo antes de la SRAM 
+	port map (
+			data		=> DataBuff2FIFO,
+			rdclk		=> not clk,
+			rdreq		=> ReadFIFO,
+			wrclk		=> clk,
+			wrreq		=> WriteFIFO, 
+			q			=> DataFIFO2SRAM,
+			rdempty	=> FIFO1empty,
+			wrfull	=> FIFO1full
+	);
+	
+	HEX1(0) <= not FIFO1empty;
+	
+   HEX1(1) <= not WriteFIFO;
+	
+	HEX1(2) <= not ReadFIFO;
+	
+	HEX1(3) <= not FIFO1full;
+	
+	HEX1(4) <= '1';
+	HEX1(5) <= '1';
+	HEX1(6) <= '1';
+	
+	
+	EscrivirSRAM: process(ReadFIFO) --Generar las direcciones de escritura de la RAM
+	begin
+		if ReadFIFO'event and ReadFIFO = '1' then 
+				Addr2W <= Addr2W +'1';
+		end if; 
+	end process;
+	
+	
+	ReadFIFO <= (Emen) and (not RW_RAM);
+	
+
+	SRAM: DriverSRAM 
+	port map (
+        clk             => clk,
+        reset           => Reset,
+        mem             => Emen,      
+        rw              => RW_RAM,
+        addr            => Addr,
+        data_f2s        => DataFIFO2SRAM,
+        ready           => Rdymen,
+        data_s2f_r      => DataSRAM2Fpio,
+        data_s2f_ur     => AUX1,
+        -- To SRAM
+        ad              => SRAM_ADDR,
+        we_n            => SRAM_WE_N,
+        oe_n            => SRAM_OE_N,
+        dio             => SRAM_DQ (11 downto 0),
+        ce_n            => SRAM_CE_N,
+        lb_n            => SRAM_LB_N,
+        ub_n            => SRAM_UB_N,
+        LEDG(4 downto 0)=> LEDG(4 downto 0)
+
+    );
+						
+	 
+	Emen <= ( Rdymen and (not FIFO1empty) and (not RW_RAM)) or ( Rdymen and (not FIFoFullNIOS) and RW_RAM); --( Rdymen and (not FIFO2full) and RW_RAM );
+	
+	Addr <= Addr2W when (RW_RAM = '0') else Addr2R;
+	
+	--Addr2R <= "000000000000" & SW(7 downto 0);
+	
+	
+	LeerSRAM: process(WriteFIFOpio)
+	begin
+	
+		if WriteFIFOpio'event and WriteFIFOpio = '1' then
+			if (RW_RAM ='1') then
+				Addr2R <= Addr2R +'1';
+			end if;
+		end if; 
+	end process;
+	
+	WriteFIFOpio <= (Emen) and (RW_RAM);
+
+	
+	U4 : Fifo_1		-- fifo despues de la SRAM 
+	port map (
+			data		=> DataSRAM2Fpio,
+			rdclk		=> FIFOControlNIOS(0),
+			rdreq		=> FIFOControlNIOS(1),
+			wrclk		=> clk,
+			wrreq		=> WriteFIFOpio, 
+			q			=> DataFIFOPIO,
+			rdempty	=> FIFOEmptyNIOS,
+			wrfull	=> FIFoFullNIOS
+	);
+	
+	
+	HEX2(0) <= not FIFOEmptyNIOS;
+	HEX2(1) <= not WriteFIFOpio;
+	HEX2(2) <= not FIFOControlNIOS(1);
+	HEX2(3) <= not FIFoFullNIOS;
+	HEX2(4) <= not FIFOControlNIOS(0);
+	HEX2(5) <= '1';
+	HEX2(6) <= '1';
+	
+	
+	LEDR(11 downto 0) <= DataGen2Buff 				when SW(16 downto 14) = "000" else 
+								DataBuff2FIFO 				when SW(16 downto 14) = "001" else 
+								DataFIFO2SRAM 				when SW(16 downto 14) = "010" else 
+								DataSRAM2Fpio 				when SW(16 downto 14) = "011" else
+								DataFIFOPIO 				when SW(16 downto 14) = "100" else
+								Addr2R(11 downto 0)		when SW(16 downto 14) = "111" else
+								Addr2W(11 downto 0)		when SW(16 downto 14) = "110";
+	
+	
+	RW_RAM <= SW(17); 
+	
+	--ReadFIFOpio <= not KEY(1);
+	
+	
+	
+	
+	 
+	 
+	 --LEDG(7 downto 4) <= Counter_Long;
+	 
+	 
+	 
+	 
+	 Contador_D_FIFO: process(clk) -- Contador de descargar dentro de la FIFO
+	 begin
+		if clk'event and clk = '1' then
+			if Counter_DP_FIFO_Up = '1' and Counter_DP_FIFO_Down = '1' then
+			elsif Counter_DP_FIFO_Up = '1' then
+				Counter_DP_FIFO <= Counter_DP_FIFO + '1';
+			elsif Counter_DP_FIFO_Down = '1' then
+				Counter_DP_FIFO <= Counter_DP_FIFO - '1';
+			end if;
+		end if;
+	 end process;
+	 
+	 
+	 Flanco_Triger_Contador: process(clk) -- Gennerador del Down para en contador a partir de Trigger_reg
+	 begin
+	 
+		if clk'event and clk ='1' then
+	
+			if Counter_DP_FIFO_Up = '1' then
+				Counter_DP_FIFO_Up <= '0';
+			else
+				If Trigger_reg = '1' and Counter_DP_FIFO_Up = '0' then
+					Counter_DP_FIFO_Up <= Trigger_reg;
+				end if;
+			end if;
+		end if;
+	 end process;
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+
+	 Reloj: process(CLOCK_50)   --- reloj de 1,2 segundos 
+    begin
+
+        if (CLOCK_50'event and CLOCK_50 = '1') then
+            counter <= counter + '1';
+            if (counter = "11111111111111111111111111") then
+                counter <= "00000000000000000000000000";
+                clk <= not clk;
+					 aux <= aux + '1';
+            end if;
+        end if;
+    end process;
+
+
+
+	nioss : component Nios_1
+        port map (
+            clk_clk           => CLOCK_50,           --           clk.clk
+            reset_reset_n     => KEY(0),     --         reset.reset_n
+            pio_ledg_export   => LEDGfake,   --      pio_ledg.export
+            pio_ledr_export   => LEDRfake,   --      pio_ledr.export
+            pio_sw_export     => SW,     --        pio_sw.export
+            pio_button_export => KEY, --    pio_button.export
+            lcd_external_data => LCD_DATA, --  lcd_external.data
+				lcd_external_E    => LCD_EN,    --              .E
+            lcd_external_RS   => LCD_RS,   --              .RS
+            lcd_external_RW   => LCD_RW,   --              .RW
+            uart_external_rxd => UART_RXD, -- uart_external.rxd
+            uart_external_txd => UART_TXD, --              .txd
+				pio_data_export     => DataFIFOPIO,     --      pio_data.export
+            pio_rdydata_export  => not FIFOEmptyNIOS,  --   pio_rdydata.export
+            pio_dataread_export => FIFOControlNIOS  --  pio_dataread.export
+            
+				
+        );
+		  
+		  
+
+
+end bh;

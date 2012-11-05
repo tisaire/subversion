@@ -1,0 +1,1163 @@
+!SESSION 2012-10-25 18:46:48.972 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-25 18:49:00.412
+!MESSAGE Indexed 'Soft_v01_bsp' (88 sources, 67 headers) in 1,82 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-25 18:49:08.747
+!MESSAGE Indexed 'Soft_v01' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY org.eclipse.cdt.debug.core 4 102 2012-10-25 18:51:44.822
+!MESSAGE A project was not specified in the launch configuration.
+
+!ENTRY org.eclipse.cdt.debug.core 4 102 2012-10-25 18:51:48.309
+!MESSAGE A project was not specified in the launch configuration.
+!SESSION 2012-10-25 19:00:52.541 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 19:02:35.763
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 19:02:41.893
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:43:16.363
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-25 22:43:23.888
+!MESSAGE The system console model is invalid. Cannot launch.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:44:26.830
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:44:29.687
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:44:32.087
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:44:34.328
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:56:17.118
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:56:17.121
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:56:19.464
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 22:56:24.874
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:03:16.195
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:03:18.360
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:03:23.920
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:04:16.360
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:04:18.510
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:04:22.643
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:04:33.593
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:04:41.395
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:04:49.772
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-25 23:05:03.960
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --sidp=0x410f8, --id=0x0, --timestamp=1351182637, /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf] return code: 8
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-25 23:05:03.961
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:05:17.655
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:05:23.230
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:05:51.170
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:05:54.229
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:06:00.001
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:08:32.095
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:08:34.253
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:08:40.552
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:13:45.754
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:13:48.086
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:13:53.622
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:18:13.273
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:18:15.432
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351182637]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:18:20.971
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351182637 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v01/Soft_v01.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:43:34.910
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-25 23:43:41.327
+!MESSAGE The system console model is invalid. Cannot launch.
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-25 23:44:48.873
+!MESSAGE The system console model is invalid. Cannot launch.
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-25 23:48:16.184
+!MESSAGE Indexed 'Soft_v02_bsp' (88 sources, 67 headers) in 1,42 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-25 23:48:23.905
+!MESSAGE Indexed 'Soft_v02' (1 sources, 13 headers) in 0,04 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:50:23.896
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351200875]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-25 23:50:30.907
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351200875 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v02/Soft_v02.elf]
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-26 04:44:30.467
+!MESSAGE Indexed 'soft_v03_bsp' (88 sources, 67 headers) in 5,37 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-26 04:44:39.670
+!MESSAGE Indexed 'soft_v03' (1 sources, 13 headers) in 0,05 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:47:33.396
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:47:35.804
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351218754]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:47:42.255
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351218754 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v03/soft_v03.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:54:28.155
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:54:30.434
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351218754]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:54:36.421
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351218754 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v03/soft_v03.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:57:17.319
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:57:19.578
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351218754]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-26 04:57:24.296
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351218754 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v03/soft_v03.elf]
+!SESSION 2012-10-27 17:45:08.851 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.core.resources 2 10035 2012-10-27 17:45:14.727
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.ui 4 0 2012-10-27 17:45:20.947
+!MESSAGE Unable to create editor ID org.eclipse.cdt.ui.editor.CEditor: The file does not exist.
+!STACK 1
+org.eclipse.core.runtime.CoreException: The file does not exist.
+	at org.eclipse.core.internal.filebuffers.ResourceFileBuffer.create(ResourceFileBuffer.java:237)
+	at org.eclipse.core.internal.filebuffers.TextFileBufferManager.connect(TextFileBufferManager.java:112)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.createFileInfo(TextFileDocumentProvider.java:559)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.createFileInfo(CDocumentProvider.java:856)
+	at org.eclipse.ui.editors.text.TextFileDocumentProvider.connect(TextFileDocumentProvider.java:478)
+	at org.eclipse.cdt.internal.ui.editor.CDocumentProvider.connect(CDocumentProvider.java:778)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.doSetInput(AbstractTextEditor.java:4056)
+	at org.eclipse.ui.texteditor.StatusTextEditor.doSetInput(StatusTextEditor.java:217)
+	at org.eclipse.ui.texteditor.AbstractDecoratedTextEditor.doSetInput(AbstractDecoratedTextEditor.java:1444)
+	at org.eclipse.ui.editors.text.TextEditor.doSetInput(TextEditor.java:169)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.internalDoSetInput(CEditor.java:1393)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.doSetInput(CEditor.java:1358)
+	at org.eclipse.ui.texteditor.AbstractTextEditor$19.run(AbstractTextEditor.java:3043)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:464)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:372)
+	at org.eclipse.jface.window.ApplicationWindow$1.run(ApplicationWindow.java:759)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.jface.window.ApplicationWindow.run(ApplicationWindow.java:756)
+	at org.eclipse.ui.internal.WorkbenchWindow.run(WorkbenchWindow.java:2600)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.internalInit(AbstractTextEditor.java:3061)
+	at org.eclipse.ui.texteditor.AbstractTextEditor.init(AbstractTextEditor.java:3088)
+	at org.eclipse.ui.internal.EditorManager.createSite(EditorManager.java:798)
+	at org.eclipse.ui.internal.EditorReference.createPartHelper(EditorReference.java:647)
+	at org.eclipse.ui.internal.EditorReference.createPart(EditorReference.java:465)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:595)
+	at org.eclipse.ui.internal.EditorAreaHelper.setVisibleEditor(EditorAreaHelper.java:271)
+	at org.eclipse.ui.internal.EditorManager.setVisibleEditor(EditorManager.java:1429)
+	at org.eclipse.ui.internal.EditorManager$5.runWithException(EditorManager.java:942)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4041)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:803)
+	at org.eclipse.ui.internal.Workbench$31.runWithException(Workbench.java:1567)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4041)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2548)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+!SUBENTRY 1 org.eclipse.core.filebuffers 4 0 2012-10-27 17:45:20.947
+!MESSAGE The file does not exist.
+
+!ENTRY org.eclipse.ui 2 2 2012-10-27 17:45:21.018
+!MESSAGE Ignored attempt to add saveable that was already registered
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: unknown saveable: org.eclipse.ui.internal.DefaultSaveable@fbd45 from part: org.eclipse.ui.internal.ErrorEditorPart@fbd45
+	at org.eclipse.ui.internal.SaveablesList.logWarning(SaveablesList.java:187)
+	at org.eclipse.ui.internal.SaveablesList.addModel(SaveablesList.java:117)
+	at org.eclipse.ui.internal.SaveablesList.addModels(SaveablesList.java:289)
+	at org.eclipse.ui.internal.SaveablesList.postOpen(SaveablesList.java:684)
+	at org.eclipse.ui.internal.PartList.partOpened(PartList.java:234)
+	at org.eclipse.ui.internal.PartList.access$0(PartList.java:210)
+	at org.eclipse.ui.internal.PartList$1.propertyChanged(PartList.java:40)
+	at org.eclipse.ui.internal.WorkbenchPartReference.fireInternalPropertyChange(WorkbenchPartReference.java:375)
+	at org.eclipse.ui.internal.WorkbenchPartReference.getPart(WorkbenchPartReference.java:610)
+	at org.eclipse.ui.internal.EditorAreaHelper.setVisibleEditor(EditorAreaHelper.java:271)
+	at org.eclipse.ui.internal.EditorManager.setVisibleEditor(EditorManager.java:1429)
+	at org.eclipse.ui.internal.EditorManager$5.runWithException(EditorManager.java:942)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4041)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.ui.application.WorkbenchAdvisor.openWindows(WorkbenchAdvisor.java:803)
+	at org.eclipse.ui.internal.Workbench$31.runWithException(Workbench.java:1567)
+	at org.eclipse.ui.internal.StartupThreading$StartupRunnable.run(StartupThreading.java:31)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:134)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4041)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3660)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2548)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2438)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:671)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:664)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:115)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:369)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:619)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:574)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1407)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1383)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-27 17:50:53.775
+!MESSAGE Indexed 'soft_v04_bsp' (88 sources, 67 headers) in 1,33 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-27 17:51:03.366
+!MESSAGE Indexed 'soft_v04' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY org.eclipse.cdt.debug.core 4 103 2012-10-27 17:55:16.210
+!MESSAGE Project soft_v03 does not exist. Please check that your launch configuration specifies a valid project in your workspace.
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 17:56:21.110
+!MESSAGE The system console model is invalid. Cannot launch.
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 17:57:22.230
+!MESSAGE The system console model is invalid. Cannot launch.
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 17:57:24.570
+!MESSAGE The system console model is invalid. Cannot launch.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 17:59:21.750
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 17:59:26.981
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 17:59:31.974
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 --reset-target /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 17:59:34.526
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 --reset-target /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 17:59:47.499
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x410f8, --reset-target, /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 17:59:47.499
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 17:59:54.002
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x410f8, --reset-target, /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf] return code: 128
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 17:59:54.002
+!MESSAGE Downloading ELF Process failed
+!SESSION 2012-10-27 18:00:03.686 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:00:24.639
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:00:29.462
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 --reset-target /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 18:00:35.365
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --accept-bad-sysid, --sidp=0x410f8, --reset-target, /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf] return code: 4, 'other error'
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 18:00:35.365
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:01:16.502
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:01:20.035
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:45:00.327
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:45:02.368
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:45:07.170
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:46:28.505
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:46:30.495
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:46:35.888
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:46:59.334
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:47:01.344
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 18:47:06.086
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:04:17.136
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:04:19.216
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:04:23.979
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:12:40.112
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:12:42.123
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:12:46.865
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:15:15.206
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:15:20.129
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:16:38.974
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:16:40.934
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:16:45.677
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:18:45.008
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:18:47.018
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:18:51.841
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:23:29.605
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 19:23:34.238
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:10:41.519
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:10:46.955
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:12:29.845
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:12:34.875
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:13:01.515
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:13:03.673
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:13:08.520
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:14:51.778
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:14:56.575
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:25:00.862
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:25:03.030
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:25:07.925
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:37:34.336
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:37:36.680
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:37:42.045
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:40:31.847
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid --sidp=0x410f8]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 21:40:36.384
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:29:24.943
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --accept-bad-sysid]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:29:29.189
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --accept-bad-sysid --sidp=0x410f8 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_v04/soft_v04.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:31:18.470
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 22:31:24.873
+!MESSAGE The system console model is invalid. Cannot launch.
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 22:31:52.163
+!MESSAGE The system console model is invalid. Cannot launch.
+!SESSION 2012-10-27 22:32:23.411 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-27 22:34:43.824
+!MESSAGE Indexed 'soft_06_bsp' (88 sources, 67 headers) in 1,39 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-27 22:34:50.894
+!MESSAGE Indexed 'soft_06' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY org.eclipse.cdt.debug.core 4 103 2012-10-27 22:37:06.911
+!MESSAGE Project soft_v04 does not exist. Please check that your launch configuration specifies a valid project in your workspace.
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:37:37.327
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351368973]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:37:42.362
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351368973 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_06/soft_06.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:37:43.254
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:37:45.355
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351368973]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:37:54.294
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351368973 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_06/soft_06.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:43:11.356
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:43:13.521
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351368973]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:43:18.534
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351368973 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_06/soft_06.elf]
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 22:43:37.140
+!MESSAGE Failed Executing: [nios2-download, '--cable=USB-Blaster on localhost [USB-0]', --device=1, --instance=0, --go, --sidp=0x410f8, --id=0x0, --timestamp=1351368973, /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_06/soft_06.elf] return code: 128
+
+!ENTRY com.altera.sbtgui.launch 4 0 2012-10-27 22:43:37.141
+!MESSAGE Downloading ELF Process failed
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:44:05.990
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351368973]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:44:11.515
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351368973 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_06/soft_06.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:56:01.038
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351368973]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 22:56:06.450
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351368973 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_06/soft_06.elf]
+!SESSION 2012-10-27 23:27:28.820 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 4 0 2012-10-27 23:28:56.253
+!MESSAGE Error: HIERARCHY_REQUEST_ERR: An attempt was made to insert a node where it is not permitted. 
+!STACK 0
+org.w3c.dom.DOMException: HIERARCHY_REQUEST_ERR: An attempt was made to insert a node where it is not permitted. 
+	at com.sun.org.apache.xerces.internal.dom.ParentNode.internalInsertBefore(Unknown Source)
+	at com.sun.org.apache.xerces.internal.dom.ParentNode.insertBefore(Unknown Source)
+	at com.sun.org.apache.xerces.internal.dom.CoreDocumentImpl.insertBefore(Unknown Source)
+	at com.sun.org.apache.xerces.internal.dom.NodeImpl.appendChild(Unknown Source)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.importAddNode(XmlProjectDescriptionStorage.java:856)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.createXmlElementCopy(XmlProjectDescriptionStorage.java:823)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.copyElement(XmlProjectDescriptionStorage.java:845)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.createWritableDescription(XmlProjectDescriptionStorage.java:329)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.getProjectDescription(XmlProjectDescriptionStorage.java:280)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionInternal(CProjectDescriptionManager.java:416)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:398)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:393)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:386)
+	at org.eclipse.cdt.core.model.CoreModel.getProjectDescription(CoreModel.java:1424)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.getLanguage(TranslationUnit.java:713)
+	at org.eclipse.cdt.internal.core.pdom.indexer.ProjectIndexerInputAdapter.getLanguages(ProjectIndexerInputAdapter.java:183)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.extractFiles(AbstractIndexerTask.java:393)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:335)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:127)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMRebuildTask.run(PDOMRebuildTask.java:84)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2012-10-27 23:28:56.279
+!MESSAGE An internal error occurred during: "C/C++ Indexer".
+!STACK 0
+org.w3c.dom.DOMException: HIERARCHY_REQUEST_ERR: An attempt was made to insert a node where it is not permitted. 
+	at com.sun.org.apache.xerces.internal.dom.ParentNode.internalInsertBefore(Unknown Source)
+	at com.sun.org.apache.xerces.internal.dom.ParentNode.insertBefore(Unknown Source)
+	at com.sun.org.apache.xerces.internal.dom.CoreDocumentImpl.insertBefore(Unknown Source)
+	at com.sun.org.apache.xerces.internal.dom.NodeImpl.appendChild(Unknown Source)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.importAddNode(XmlProjectDescriptionStorage.java:856)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.createXmlElementCopy(XmlProjectDescriptionStorage.java:823)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.copyElement(XmlProjectDescriptionStorage.java:845)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.createWritableDescription(XmlProjectDescriptionStorage.java:329)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.getProjectDescription(XmlProjectDescriptionStorage.java:280)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionInternal(CProjectDescriptionManager.java:416)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:398)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:393)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:386)
+	at org.eclipse.cdt.core.model.CoreModel.getProjectDescription(CoreModel.java:1424)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.getLanguage(TranslationUnit.java:713)
+	at org.eclipse.cdt.internal.core.pdom.indexer.ProjectIndexerInputAdapter.getLanguages(ProjectIndexerInputAdapter.java:183)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.extractFiles(AbstractIndexerTask.java:393)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:335)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:127)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMRebuildTask.run(PDOMRebuildTask.java:84)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:137)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-27 23:29:03.256
+!MESSAGE Indexed 'soft_07' (1 sources, 13 headers) in 0,10 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 23:51:53.318
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351371899]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 23:51:58.885
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351371899 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_07/soft_07.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 23:52:07.443
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 23:52:09.601
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351371899]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-27 23:52:15.012
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351371899 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_07/soft_07.elf]
+!SESSION 2012-10-28 00:08:07.129 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-28 00:09:08.413
+!MESSAGE Indexed 'soft_10_bsp' (88 sources, 67 headers) in 1,20 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-28 00:09:15.353
+!MESSAGE Indexed 'soft_10' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:11:44.741
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:11:49.774
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:12:33.740
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:12:35.899
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:12:41.433
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:27:21.938
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:27:24.068
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:27:29.532
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:28:08.095
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:28:10.245
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:28:17.460
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:33:44.714
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:33:46.874
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:33:52.694
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:38:23.535
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:38:25.689
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:38:31.315
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:42:30.487
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:42:32.690
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:42:38.185
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:50:08.342
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:50:10.503
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:50:15.131
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:53:27.164
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:53:29.325
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:53:34.709
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:54:24.595
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:54:26.747
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:54:32.280
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:55:57.075
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:55:59.229
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:56:04.732
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:56:49.828
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:56:51.973
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 00:56:57.437
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:04:18.380
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:04:20.546
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:04:25.180
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:05:42.506
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:05:44.667
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:05:50.098
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:07:23.238
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:07:25.372
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:07:31.084
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:08:44.746
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:08:46.890
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:08:52.260
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:10:25.888
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:10:28.051
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:10:32.653
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:11:28.688
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:11:31.194
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:11:36.652
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:12:17.873
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:12:20.576
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:12:26.035
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:13:19.020
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:13:21.169
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:13:26.690
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:13:58.182
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:14:00.331
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:14:05.872
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:15:03.250
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:15:05.452
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:15:12.227
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:15:48.857
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:15:50.992
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:15:56.492
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:17:47.729
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:17:50.441
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:17:56.160
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:18:30.182
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:18:32.337
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:18:37.823
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:19:19.766
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:19:21.924
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:19:26.297
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:19:26.829
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:19:31.387
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:19:47.023
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:21:39.022
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:21:41.197
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:21:46.697
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:22:40.683
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:22:42.823
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:22:48.257
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:23:02.566
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:23:04.703
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:23:09.622
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:26:09.170
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:26:11.359
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:26:16.862
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:27:04.011
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-0]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:27:06.377
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351375192]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 01:27:12.688
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-0]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351375192 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_10/soft_10.elf]
+!SESSION 2012-10-28 04:54:04.500 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-28 04:55:32.572
+!MESSAGE Indexed 'soft_11_bsp' (88 sources, 67 headers) in 1,21 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-28 04:55:43.201
+!MESSAGE Indexed 'soft_11' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 04:57:51.300
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 04:57:57.550
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:00:17.415
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:00:19.901
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:00:26.201
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:11:41.358
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:11:43.623
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:11:49.437
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:13:08.336
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:13:10.526
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:13:16.042
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:14:09.509
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:14:11.714
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:14:17.255
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:21:35.998
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:21:38.208
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:21:44.035
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:22:27.147
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:22:29.342
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:22:34.876
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:23:22.501
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:23:24.705
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:23:30.228
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:25:11.555
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:25:13.760
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:25:19.303
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:26:02.536
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:26:04.732
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:26:10.140
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:28:58.466
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:29:00.677
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:29:06.218
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:30:07.716
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:30:09.908
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351395934]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-28 05:30:15.471
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351395934 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_11/soft_11.elf]
+!SESSION 2012-10-29 12:36:52.132 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-29 12:38:20.994
+!MESSAGE Indexed 'Soft_12_bsp' (88 sources, 67 headers) in 1,16 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-29 12:38:32.996
+!MESSAGE Indexed 'Soft_12' (1 sources, 13 headers) in 0,01 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-29 12:40:27.123
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351510001]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-29 12:40:33.355
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351510001 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_12/Soft_12.elf]
+!SESSION 2012-10-30 15:06:17.704 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-30 15:07:52.234
+!MESSAGE Indexed 'soft_16_bsp' (88 sources, 67 headers) in 1,33 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-30 15:08:23.500
+!MESSAGE Indexed 'soft_16' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 15:11:25.474
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351604975]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 15:11:34.292
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351604975 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_16/soft_16.elf]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 15:17:25.397
+!MESSAGE Terminated Launch with connection: 10USB-Blaster on localhost [USB-1]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 15:17:27.890
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351604975]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 15:17:33.506
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351604975 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/soft_16/soft_16.elf]
+!SESSION 2012-10-30 15:59:49.734 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-30 16:01:27.724
+!MESSAGE Indexed 'sdfddsfdf_bsp' (88 sources, 67 headers) in 1,26 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-30 16:01:35.615
+!MESSAGE Indexed 'sdfddsfdf' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 16:03:32.848
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351606705]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 16:03:37.498
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351606705 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/sdfddsfdf/sdfddsfdf.elf]
+!SESSION 2012-10-30 16:20:15.734 -----------------------------------------------
+eclipse.buildId=M20100909-0800
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -perspective com.altera.sbtgui.ui.cPerspective
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-30 16:22:05.582
+!MESSAGE Indexed 'Soft_v10_bsp' (88 sources, 67 headers) in 1,15 sec: 1.192 declarations; 3.350 references; 129 unresolved inclusions; 5 syntax errors; 234 unresolved names (4,90%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2012-10-30 16:22:24.530
+!MESSAGE Indexed 'Soft_v10' (1 sources, 13 headers) in 0,02 sec: 1 declarations; 1 references; 14 unresolved inclusions; 0 syntax errors; 0 unresolved names (0,00%)
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 16:24:25.576
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --stop --sidp=0x410f8 --id=0x0 --timestamp=1351609869]
+
+!ENTRY com.altera.sbtgui.launch 1 0 2012-10-30 16:24:34.055
+!MESSAGE Executing: [C:\Windows\system32\cmd.exe, /C, C:/altera/11.1sp2/quartus\bin\cygwin\bin\bash.exe, -c, nios2-download '--cable=USB-Blaster on localhost [USB-1]' --device=1 --instance=0 --go --sidp=0x410f8 --id=0x0 --timestamp=1351609869 /cygdrive/c/Users/Alberto/PartialDischarge/altera/FinalNiosUART_3/software/Soft_v10/Soft_v10.elf]
