@@ -95,21 +95,30 @@ class TCP():
             self.s.close
 class ser():
     def __init__(self):
-        self.s=serial.Serial('/dev/ttyUSB1')
+        self.s=serial.Serial('/dev/ttyUSB0')
     def connect(self):
         self.s.baudrate=115200
         print self.s,"Connected!"
     def get_values(self):
         global values
         try:
-            a=self.s.write('hola')
-            print a
+            print '***************************************************'
+            i=0
+            llista=[]
+            while i<1050:
+                a=self.s.readline()
+                #print a,int(a)
+                llista.append((float(a)-2046)/2046)
+                #print a,i,len(llista)
+                i+=1
+            
+            values=llista
+            print "done",values
             
         except:
             print "Unexpected error:", sys.exc_info()
 
             print "bye"
-            self.s.clos
 
 
 def SinwaveformGenerator(arg):
@@ -126,14 +135,20 @@ def RealtimePloter():
     global values
     CurrentXAxis=pylab.arange(0,len(values),1)
     line1[0].set_data(CurrentXAxis,pylab.array(values[:]))
-    fft=10*log(abs(numpy.fft.rfft(values[:])))
+    nw=numpy.array(values)
+    print nw
+    
+    valuesnorm=(nw)/2046.0
+    print valuesnorm
+    print valuesnorm
+    fft=(abs(numpy.fft.rfft(values[:])))
     #print len(values[:]),len(fft)
     #print fft
     
     CurrentXAxis=pylab.arange(0,len(values)/2+1,1)
     line2[0].set_data(CurrentXAxis,pylab.array(fft))
-    ax.axis([CurrentXAxis.min(),CurrentXAxis.max(),-40000,40000])
-    ax2.axis([CurrentXAxis.min(),CurrentXAxis.max(),-400,400])
+    ax.axis([CurrentXAxis.min(),CurrentXAxis.max()*2,-1,1])
+    ax2.axis([CurrentXAxis.min(),CurrentXAxis.max(),0,100])
     fig.canvas.draw()
     #manager.show()
 if source =='TCP':
@@ -142,9 +157,9 @@ else:
     tcp_conn=ser()
 
 tcp_conn.connect()
-timer = fig.canvas.new_timer(interval=20)
+timer = fig.canvas.new_timer(interval=2000)
 timer.add_callback(RealtimePloter)
-timer2 = fig.canvas.new_timer(interval=20)
+timer2 = fig.canvas.new_timer(interval=2000)
 timer2.add_callback(tcp_conn.get_values)
 timer.start()
 timer2.start()
