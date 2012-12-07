@@ -12,7 +12,7 @@ import struct
 import numpy
 import serial
 
-source='serial' #'TCP'
+source='TCP' #'TCP' 'serial'
 
 xAchse=pylab.arange(0,300,1)
 yAchse=pylab.array([0]*300)
@@ -61,36 +61,36 @@ class TCP():
         global values
         try:
             a=self.s.recv(2)
-            #print a
+            print a
     
             b=struct.unpack_from("h",a)           
             b=int(b[0])
             #print "b:",b
             rcv=self.s.recv(b)
             tmp=sys.getsizeof(rcv)-37
-            #print tmp
+            print tmp
             if tmp==b:
-                #print "OK"
+                print "OK"
                 tupla_valors=struct.unpack_from(b/2*"h",rcv)
-                #print tupla_valors
+                print tupla_valors
                 values=list(tupla_valors)
-                #print values
+                print values
             elif tmp<b:
-                #print "size not expected"
+                print "size not expected"
                 tupla_valors=struct.unpack_from(b/2*"h",rcv)
                 while tmp<b:
-                    #print tmp
+                    print tmp
                     rcv=self.s.recv(b-tmp)
                     tmp+=sys.getsizeof(rcv)-37
                     tupla_valors+=struct.unpack_from(b/2*"h",rcv)
                 values=list(tupla_valors)
-                #print "final size:",tmp
+                print "final size:",tmp
             else:
                 print "size bigger than expected"
   
         except:
             print "Unexpected error:", sys.exc_info()
-            print sys.getsizeof(rcv)
+            #print sys.getsizeof(rcv)
             print "bye"
             self.s.close
 class ser():
@@ -105,14 +105,27 @@ class ser():
             print '***************************************************'
             i=0
             llista=[]
-            while i<1050:
+            line=self.s.readline()
+            print line
+            while (line!='start\r\n'):
+                line=self.s.readline()
+                print line,'looking for start'
+            size=int(self.s.readline())
+            print 'size:',size
+            while i<size:
                 a=self.s.readline()
+                print a,i
                 #print a,int(a)
                 llista.append((float(a)-2046)/2046)
                 #print a,i,len(llista)
                 i+=1
             
             values=llista
+            line=self.s.readline()
+            if line=='stop\r\n':
+                print 'all OK',line
+            else:
+                print 'error!!!!!!',line
             print "done",values
             
         except:
@@ -136,11 +149,11 @@ def RealtimePloter():
     CurrentXAxis=pylab.arange(0,len(values),1)
     line1[0].set_data(CurrentXAxis,pylab.array(values[:]))
     nw=numpy.array(values)
-    print nw
+    #print nw
     
     valuesnorm=(nw)/2046.0
-    print valuesnorm
-    print valuesnorm
+    #print valuesnorm
+    #print valuesnorm
     fft=(abs(numpy.fft.rfft(values[:])))
     #print len(values[:]),len(fft)
     #print fft
@@ -157,9 +170,9 @@ else:
     tcp_conn=ser()
 
 tcp_conn.connect()
-timer = fig.canvas.new_timer(interval=2000)
+timer = fig.canvas.new_timer(interval=20)
 timer.add_callback(RealtimePloter)
-timer2 = fig.canvas.new_timer(interval=2000)
+timer2 = fig.canvas.new_timer(interval=20)
 timer2.add_callback(tcp_conn.get_values)
 timer.start()
 timer2.start()
