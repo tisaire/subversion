@@ -51,7 +51,21 @@ obj/niosII_simple_socket_server.o: niosII_simple_socket_server.c \
   ../niosII_simple_socket_server_1_bsp//HAL/inc/sys/alt_llist.h \
   ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_sgdma_descriptor.h \
   ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_tse_system_info.h \
-  ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_tse.h
+  ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_tse.h \
+  ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_pio_regs.h \
+  ../niosII_simple_socket_server_1_bsp//HAL/inc/io.h \
+  ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_uart.h \
+  ../niosII_simple_socket_server_1_bsp//HAL/inc/sys/termios.h \
+  ../niosII_simple_socket_server_1_bsp//HAL/inc/sys/alt_warning.h \
+  ../niosII_simple_socket_server_1_bsp//UCOSII/inc/os/alt_sem.h \
+  ../niosII_simple_socket_server_1_bsp//UCOSII/inc/priv/alt_sem_ucosii.h \
+  ../niosII_simple_socket_server_1_bsp//HAL/inc/includes.h \
+  ../niosII_simple_socket_server_1_bsp//HAL/inc/alt_types.h \
+  ../niosII_simple_socket_server_1_bsp//UCOSII/inc/os/alt_flag.h \
+  ../niosII_simple_socket_server_1_bsp//UCOSII/inc/priv/alt_flag_ucosii.h \
+  ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_uart_fd.h \
+  ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_uart_regs.h \
+  ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_uart_fd.h
 
 ../niosII_simple_socket_server_1_bsp//HAL/inc/includes.h:
 
@@ -160,3 +174,31 @@ alt_error_handler.h:
 ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_tse_system_info.h:
 
 ../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_tse.h:
+
+../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_pio_regs.h:
+
+../niosII_simple_socket_server_1_bsp//HAL/inc/io.h:
+
+../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_uart.h:
+
+../niosII_simple_socket_server_1_bsp//HAL/inc/sys/termios.h:
+
+../niosII_simple_socket_server_1_bsp//HAL/inc/sys/alt_warning.h:
+
+../niosII_simple_socket_server_1_bsp//UCOSII/inc/os/alt_sem.h:
+
+../niosII_simple_socket_server_1_bsp//UCOSII/inc/priv/alt_sem_ucosii.h:
+
+../niosII_simple_socket_server_1_bsp//HAL/inc/includes.h:
+
+../niosII_simple_socket_server_1_bsp//HAL/inc/alt_types.h:
+
+../niosII_simple_socket_server_1_bsp//UCOSII/inc/os/alt_flag.h:
+
+../niosII_simple_socket_server_1_bsp//UCOSII/inc/priv/alt_flag_ucosii.h:
+
+../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_uart_fd.h:
+
+../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_uart_regs.h:
+
+../niosII_simple_socket_server_1_bsp//drivers/inc/altera_avalon_uart_fd.h:
