@@ -12,7 +12,7 @@ import struct
 import numpy
 import serial
 
-source='TCP' #'TCP' 'serial'
+source='TCP' #'TCP'
 
 xAchse=pylab.arange(0,300,1)
 yAchse=pylab.array([0]*300)
@@ -60,78 +60,57 @@ class TCP():
     def get_values(self):
         global values
         try:
+            values = [0 for x in range(2000)]
             a=self.s.recv(2)
-            print a
+            #print a
     
-            b=struct.unpack_from("h",a)           
+            b=struct.unpack_from("H",a)           
             b=int(b[0])
             #print "b:",b
             rcv=self.s.recv(b)
             tmp=sys.getsizeof(rcv)-37
-            print tmp
+            #print tmp
             if tmp==b:
-                print "OK"
-                tupla_valors=struct.unpack_from(b/2*"h",rcv)
-                print tupla_valors
+                #print "OK"
+                tupla_valors=struct.unpack_from(b/2*"H",rcv)
+                #print tupla_valors
                 values=list(tupla_valors)
-                print values
+                #print values
             elif tmp<b:
-                print "size not expected"
-                tupla_valors=struct.unpack_from(b/2*"h",rcv)
+                #print "size not expected"
+                tupla_valors=struct.unpack_from(b/2*"H",rcv)
                 while tmp<b:
-                    print tmp
+                    #print tmp
                     rcv=self.s.recv(b-tmp)
                     tmp+=sys.getsizeof(rcv)-37
-                    tupla_valors+=struct.unpack_from(b/2*"h",rcv)
+                    tupla_valors+=struct.unpack_from(b/2*"H",rcv)
                 values=list(tupla_valors)
-                print "final size:",tmp
+                #print "final size:",tmp
             else:
                 print "size bigger than expected"
   
         except:
-            print "Unexpected error:", sys.exc_info()
+            print "Unexpected error:", sys.exc_info()[:]
             #print sys.getsizeof(rcv)
             print "bye"
             self.s.close
 class ser():
     def __init__(self):
-        self.s=serial.Serial('/dev/ttyUSB0')
+        self.s=serial.Serial('/dev/ttyUSB1')
     def connect(self):
         self.s.baudrate=115200
         print self.s,"Connected!"
     def get_values(self):
         global values
         try:
-            print '***************************************************'
-            i=0
-            llista=[]
-            line=self.s.readline()
-            print line
-            while (line!='start\r\n'):
-                line=self.s.readline()
-                print line,'looking for start'
-            size=int(self.s.readline())
-            print 'size:',size
-            while i<size:
-                a=self.s.readline()
-                print a,i
-                #print a,int(a)
-                llista.append((float(a)-2046)/2046)
-                #print a,i,len(llista)
-                i+=1
-            
-            values=llista
-            line=self.s.readline()
-            if line=='stop\r\n':
-                print 'all OK',line
-            else:
-                print 'error!!!!!!',line
-            print "done",values
+            a=self.s.write('hola')
+            print a
             
         except:
             print "Unexpected error:", sys.exc_info()
 
             print "bye"
+            self.s.clos
 
 
 def SinwaveformGenerator(arg):
@@ -148,20 +127,14 @@ def RealtimePloter():
     global values
     CurrentXAxis=pylab.arange(0,len(values),1)
     line1[0].set_data(CurrentXAxis,pylab.array(values[:]))
-    nw=numpy.array(values)
-    #print nw
-    
-    valuesnorm=(nw)/2046.0
-    #print valuesnorm
-    #print valuesnorm
-    fft=(abs(numpy.fft.rfft(values[:])))
+    fft=10*log(abs(numpy.fft.rfft(values[:])))
     #print len(values[:]),len(fft)
     #print fft
     
     CurrentXAxis=pylab.arange(0,len(values)/2+1,1)
     line2[0].set_data(CurrentXAxis,pylab.array(fft))
-    ax.axis([CurrentXAxis.min(),CurrentXAxis.max()*2,-1,1])
-    ax2.axis([CurrentXAxis.min(),CurrentXAxis.max(),0,100])
+    ax.axis([CurrentXAxis.min(),CurrentXAxis.max(),0,5000])
+    ax2.axis([CurrentXAxis.min(),CurrentXAxis.max(),-400,400])
     fig.canvas.draw()
     #manager.show()
 if source =='TCP':
